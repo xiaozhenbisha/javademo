@@ -1,0 +1,60 @@
+一、写出获取Class对象的方式 (4种)
+	
+	//1. 类名
+	Class c=类名.class;       int.class   double.class   void.class
+	//2. 对象
+	Class c=对象.getClass();
+	//3. 全类名的字符串
+	Class.forName("全类名");
+	//4. 根据类加载器对象和全类名字符串
+	Class c=classLoader.loadClass("全类名");
+	
+二、已知类Phone,采用反射机制，创建其对象并调用其say方法,接收返回值并打印
+class Phone{
+	private String name;
+	private String brand;
+	private double price;
+	public Phone(String name, String brand, double price) {
+		this.name = name;
+		this.brand = brand;
+		this.price = price;
+	}
+	private String say(){
+		return "我是："+name+"我的品牌是："+brand+"我的售价是："+price;
+	}
+}
+
+	main(){
+		//1. 获得Class对象
+		Class c=Phone.class;
+		//2. 创建其对象
+		//2.1  获得唯一的构造器对象
+		Constructor constructor =c.getDeclaredConstructor(String.class,String.class,double.class);
+		//2.2 创建其对象
+		Object obj=constructor.newInstance("iphone11","apple",10000);
+		//3. 调用say方法
+		//3.1 获得say方法的对象
+		Method method=c.getDeclaredMethod("say");
+		//3.2 进行权限压制
+		method.setAccessible(true);
+		//3.3 调用方法
+		Object returnObj=method.invoke(obj);
+		sout(returnObj);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	

@@ -1,0 +1,67 @@
+一、用递归实现打印三次 "好好学习，天天向上！！！"(手写)
+	main(){//伪代码
+		print(0);
+	}
+
+	public void print(int i){
+		if(i<3){
+			sout("好好学习，天天向上！！！");
+			i++;
+			print(i);
+		}
+	}
+	
+二、试写出IO流的四大根类 
+	
+	字节流     		字符流
+输入流	InputStream	Reader
+输出流	OutputStream	Writer
+
+	
+三、分别写出InputStream中的两个read方法并写出其功能
+
+	int read();   执行一次读取一个字节，字节采用int形式存储，读到文件末尾时，在读会返回-1
+	
+	int read(byte[] b); 执行一次读取多个字节，字节存储到byte数组中，返回值是读取的字节数，
+			读到文件末尾，在读返回-1
+			文件剩余字节数大于数组的长度，读取的字节数就是数组的长度个
+			文件剩余字节数小于数组的长度，读取的字节数就是文件剩余字节数
+	
+四、手写一套，将d:/test/java.txt读取到程序并显示的代码！(两种方式)
+	InputStream in=null;
+	try{
+	//1. 流对象的创建
+		in=new FileInputStream("d:/test/java.txt");//FileNotFoundException
+
+	//2. 进行数据操作
+		byte[] b=new byte[10];
+		int len=0;
+		while((len=in.read(b))!=-1){//IOException
+			sout(new String(b,0,len));
+		}
+	}catch(FileNotFoundExceptione){//这个位置直接写Exception(提示信息是否都是一样的？)
+		e.pri();//e 名义上是Exception    实际是FileNotFoundException  (多态)
+	}catch(Exception e){
+		e.pri();
+	}finally{
+		//3. 流资源的关闭
+		try{
+			in.close();
+		}catch(){
+		}
+		
+	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,1723 @@
+# 第一章 Java 编程语言概述
+
+## 一、走进 Java 语言
+
+1、Java 由 SUN 公司研发，后来 SUN 被 Oracle 收购
+
+2、Java 之父：James Gosling
+
+3、Java 由 1995 年发布，正式版本由 1996年1月发布（jdk1.0）
+
+
+
+## 二、Java 的特点
+
+1、面向对象
+
+2、分布式
+
+3、简单化
+
+4、多线程
+
+5、安全
+
+6、跨平台移植 ------ JVM Java Virtual Machine Java 虚拟机
+
+
+
+## 三、Java 的三大平台体系
+
+JavaSE Java Standard Edition Java 标准版：适用于开发 C/S （Client/Server）架构的应用程序
+
+JavaEE Java Enterprise Edition Java 企业版：适用于开发 B/S （Browser/Server）架构的应用程序
+
+JavaME Java Micro Edition Java 微型版：-------  Android
+
+
+
+## 四、开发第一个应用程序
+
+### 1、搭建开发环境
+
+JVM Java Virtual Machine Java 虚拟机：用于与操作系统进行交互
+
+![](img/JVM.PNG)
+
+JRE Java Runtime Enviroment Java 运行环境：JVM + Java 提供的核心类库
+
+JDK Java Development Kit Java 开发工具集：JRE + Java 提供的开发工具集（javac.exe java.exe javadoc.exe）
+
+
+
+### 2、下载安装配置 JDK
+
+①下载安装 JDK
+
+②通过命令提示符到 JDK 安装路径的 bin 路径下，执行 javac
+
+③配置 path 环境变量：JDK 安装路径的 bin
+
+​		目的：在任意路径下执行 javac
+
+​		执行流程：先在当前路径下找是否有 javac.exe ，若没有再到 path 环境变量中从前往后依次查找
+
+④配置 JAVA_HOME : 配置到 JDK 的安装路径。 如： d:\Java\jdk1.8.0_141
+
+⑤将path 环境变量修改为： %JAVA_HOME%\bin
+
+
+
+### 3、开发第一个应用程序的步骤
+
+①编写： .java 源文件 【HelloWorld.java】
+
+```java
+public class HelloWorld{
+    public static void main(String[] args){
+        System.out.println("HelloWorld");
+    }
+}
+```
+
+②编译：通过 javac 命令，生成一个或多个的 .class 字节码文件。【javac HelloWorld.java】
+
+③运行：通过 java 命令，将一个或多个 .class 字节码文件加载到内存中。【java HelloWorld】
+
+
+
+### 4、开发第一个应用程序的注意
+
+①以 .java 结尾的文件称为 .java 源文件
+
+②一个 .java 源文件中可以有多个类
+
+③一个 .java 源文件中只能有一个 public 修饰的类
+
+④public 修饰类的名称必须与源文件名称一致
+
+⑤每条语句以 ";" 结尾
+
+⑥Java 严格区分大小写
+
+⑦若一个需要执行，该类中必须提供一个主方法，是程序的入口
+
+```java
+public static void main(String[] args){}
+```
+
+
+
+## 五、注释语句
+
+不会被 JVM 解释执行的语句，用于解释说明一段代码
+
+//单行注释
+
+
+
+/*
+
+​	多行注释：
+
+​		注意：多行注释不能嵌套
+
+*/
+
+
+
+/**
+
+​	Java 特有的注释：文档注释
+
+​	可以通过 javadoc -d e:\mydoc -author -version HelloWorld.java
+
+*/
+
+
+
+# 第二章 Java 基础语法1
+
+## 一、标识符
+
+凡是自己明明的地方都叫标识符。例如：包名、类名、接口名、方法名、变量名、常量名
+
+
+
+关键字：被 Java 赋予了特殊含义的单词
+
+
+
+![](img/关键字和保留字.png)
+
+
+
+### 1、命名的规则（必须遵守，若不遵守编译不能通过）
+
+①只能有字母 a-z A-Z  数字 0-9  特殊字符 "_" 下划线 和  "$" 美元符
+
+②数字不能开头
+
+③名字之间不能有空格
+
+④不能使用关键字和保留字，但是可以包含关键字和保留字
+
+⑤Java 严格区分大小写，但是长度无限制
+
+
+
+### 2、命名的规范（可以不遵守，但是会受到鄙视）
+
+①包名：所有字母都小写。 如： xxxyyyzzz
+
+②类名、接口名：若有多个单词组成，每个单词首字母都大写。 如：XxxYyyZzz
+
+③方法名、变量名：若有多个单词组成，第一个单词首字母小写，其余单词首字母都大写。 如：xxxYyyZzz
+
+④常量名：所有字母都大写，每个单词之间以 "_" 隔开。 如：XXX_YYY_ZZZ
+
+
+
+## 二、变量
+
+保存数据
+
+
+
+变量：**局部变量** & 成员变量
+
+
+
+### 1、变量的格式
+
+数据类型 变量名 = 值;
+
+如： int var = 10;
+
+//声明一个变量
+
+int var;
+
+//为变量赋值
+
+var = 10;
+
+
+
+### 2、变量的概念
+
+①在内存中开辟一块内存空间
+
+②该空间有类型（数据类型）有名称（变量名）
+
+③变量可以在指定的范围内不断的变化
+
+
+
+### 3、变量的注意
+
+①在同一个作用范围内变量名不能重复
+
+②作用域：变量作用在所属的那对 {} 内
+
+**③局部变量在使用前必须赋值**
+
+④先声明，后使用
+
+
+
+## 三、进制之间的转换（了解）
+
+![](img/1587691629833.png)
+
+![1590371161640](img/1590371161640.png)
+
+## 四、变量的数据类型
+
+### 1、基本数据类型
+
+​		整型：byte(8位)  short(16位)  int(32位)-默认类型  long(64位)
+
+​		浮点型：float(32位)   double(64位)-默认类型
+
+​		字符型：char(16位-2个字节)
+
+​		布尔型：boolean 
+
+
+
+### 2、引用数据类型
+
+​	|--类（class）   -------------------   String
+
+​	|--接口（interface）
+
+​	|--数组（[]）
+
+
+
+### 3、声明变量的注意
+
+①声明 long 型变量，值后必须加 L 或 l 。 如：long l1 = 1234345784L;
+
+②声明 float 型变量，值后必须加 F 或 f 。 如：float f1 = 15.6F;
+
+③声明 double 型变量，值后可以加 D 或 d 。如：double d1 = 15.6;   double d2 = 15.6D;
+
+④声明 char 型变量，值必须使用单引号，char 型变量只能存储单个字符。
+
+​	  char 型变量使用 Unicode 编码存储（ASCII、中文、日文、特殊字符）
+
+​	如：
+
+​		char c1 = 'A';   
+
+​		char c2 = '中';
+
+​		char c3 = '$';
+
+​		char c4 = '\uC499';
+
+⑤声明 String 型变量，值必须使用双引号。 如： String str = "我大尚硅谷威武！";
+
+
+
+## 五、数据类型之间的转换
+
+### 自动类型转换（自动升级）
+
+小容量转大容量。系统自动完成
+
+如：
+
+​	byte b = 123;
+
+​	int i = b; //自动类型转换
+
+①byte  short  char ---->  int ---->  **long  ---->  float**  ----> double
+
+②byte short char 三者之间不做运算，若运算都将提升成 int 再做运算
+
+③boolean 不参与运算
+
+
+
+④任何基本数据类型与 String 使用 连接符 + , 都将自动串接成 String
+
+
+
+### 强制类型转换
+
+大容量转小容量。需要使用强转符 "(需要转换的类型)"，可能损失精度。
+
+如：
+
+​	int a = 130;
+
+​	byte b = (byte)a;
+
+## 六、运算符
+
+### 算数运算符
+
+```java
++  -   +  -   *   /  %   (前)++   (后)++  (前)-- (后)--  +（连接符）
+```
+
+```java
+//除法
+System.out.println(1234 / 1000 * 1000); //1000
+
+//取模(求余)
+System.out.println(10 % 5);
+
+//++运算符
+int a = 10;
+//前++
+System.out.println(++a);//11
+
+//后++
+System.out.println(a++);//11
+System.out.println(a);//12
+```
+
+【面试题】
+
+int a = 10;
+
+a = a++;
+
+System.out.println(a);//10
+
+![1590456855588](img/1590456855588.png)
+
+
+
+
+
+### 赋值运算符
+
+```java
+=  +=  -=   *=  /=   %=
+```
+
+```java
+int a = 10;
+a += 10; //a = a + 10;
+```
+
+【面试题】
+
+short s = 1;
+
+s = s + 1; //编译?   NO
+
+s += 1;  //s = (short)(s + 1)编译？  YES
+
+### 比较运算符（关系运算符）
+
+比较运算符运算结果都为 boolean
+
+```java
+==   !=  >  <   >=   <=
+```
+
+```java
+int a = 10;
+int b = 20;
+boolean boo = a == b;
+```
+
+
+
+### 逻辑运算符
+
+逻辑运算符结果都为 boolean
+
+```java
+&& （短路与） || （短路或）  !(逻辑非)   &(逻辑与)  |（逻辑或） ^(逻辑异或)
+```
+
+```java
+//需求：判断一个数是不是大于10小于20
+int a = 10;
+
+//错误的做法
+//boolean boo = 10 < a < 20;
+
+//逻辑运算符
+boolean boo = a > 10 && a++ < 20;
+
+System.out.println(a);//10
+```
+
+【面试题】&& 和 & 的区别？
+
+&& : 短路与，当 && 左边表达式结果为 false 时，右边表达式将不再计算
+
+&：是位运算符，当用于逻辑运算时，无论左边表达式结果为 true 还是 false ，右边都计算
+
+
+
+|| 和  |  的区别？
+
+
+
+### 位运算符
+
+```java
+~  &  |  ^   <<  >>  >>>  注意：没有 <<<
+```
+
+
+
+### 三元运算符（三目运算符）
+
+格式：
+	条件表达式 ? 表达式1 : 表达式2;
+
+①条件表达式结果为 true 时，执行表达式1，否则执行表达式2
+
+②表达式1与表达式2结果的类型需要保持一致！
+
+```java
+int a = 10;
+int b = 20;
+int max = a > b ? a : b;
+```
+
+
+
+# 第三章  Java 基础语法2
+
+## 一、流程控制
+
+### 顺序结构
+
+Java 程序的运行时顺序执行
+
+### 分支结构
+
+#### 	条件判断
+
+​			①
+
+​			if(条件表达式){
+
+​				//若条件表达式结果为 true 时，需要执行的语句
+
+​			}
+
+​			②
+
+​			if(条件表达式){
+
+​				//若条件表达式结果为 true 时，需要执行的语句
+
+​			}else{
+
+​				//若条件表达式结果为 false 时，需要执行的语句
+
+​			}
+
+​			③
+
+​			if(条件表达式1){
+
+​				//若条件表达式1 结果为 true 时，需要执行的语句
+
+​			}else if(条件表达式2){
+
+​				//若条件表达式2 结果为 true 时，需要执行的语句
+
+​			}else if(条件表达式3){
+
+​				//若条件表达式3 结果为 true 时，需要执行的语句
+
+​			}
+
+​			……
+
+​			else{
+
+​				//若上述条件表达式结果都为 false 时，需要执行的语句
+
+​			}
+
+​			注意：
+
+​			①若某个条件表达式结果为 true ，执行相应语句，其他 else if 不再执行
+
+​			②if-else 语句可以嵌套的
+
+#### 	选择结构
+
+​			switch(表达式){
+
+​				case 值1:
+
+​					//执行的语句
+
+​					break;
+
+​				case 值2:
+
+​					//执行的语句
+
+​					break;
+
+​				case 值3:
+
+​					//执行的语句
+
+​					break;
+
+​				default:
+
+​					//执行的语句
+
+​					break;
+
+​			}
+
+​			注意：
+
+​				①表达式结果的类型只能是 byte short  char int  String(jdk1.7后)  枚举
+
+​				②default 是可选的
+
+​				③break 也是可选的,如果某个case 后的值匹配成功，依次向下执行，直到遇到 break 为止
+
+​				④case 后只能写常量值，不能写表达式
+
+​				⑤表达式结果的类型需要与 case 后值的类型保持一致！
+
+​				
+
+​				
+
+```java
+//需求：若一个数大于等于2 小于等于，则打印 "2-5"
+int num = 2;
+switch(num){
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    	System.out.println("2-5");
+    	break;
+}
+```
+
+
+
+### 循环结构
+
+重复的执行某语句
+
+①初始化值
+
+②循环条件
+
+③迭代条件
+
+④循环体
+
+
+
+for 循环：
+
+for( ①; ② ; ③){
+
+​	④
+
+}
+
+执行流程：①②④③②……②
+
+
+
+while 循环：
+
+①
+
+while(②){
+
+​	④
+
+​	③
+
+}
+
+
+
+do-while 循环：
+
+①
+
+do{
+
+​	④
+
+​	③
+
+}while(②);
+
+
+
+while 和  do-while 的区别？
+
+while : 先判断循环条件，再执行循环体
+
+do-while ：先执行循环体，再判断循环条件，do-while 至少执行一次
+
+
+
+#### 嵌套循环
+
+一个循环充当另一个循环的循环体
+
+```java
+/*
+1—100之间的所有质数:除了1和其本身，不能被其他自然数整除的数
+
+*/
+class PrimeNumber {
+	public static void main(String[] args) {
+		boolean flag = true;
+
+		for(int i = 2; i <= 100; i++){
+			for(int j = 2; j < i; j++){
+				
+				if(i % j == 0){
+					//该数一定不是质数
+					flag = false;
+                    break;
+				}
+			}
+
+			//可以确定 i 是否是质数，是质数打印。
+			if(flag){
+				System.out.println(i);
+			}
+
+			flag = true;
+		}
+
+	}
+}
+```
+
+## 二、特殊流程控制语句
+
+break ：用于结束“当前”循环。可以使用在 switch-case 语句中，用于结束当前 switch-case 语句
+
+continue ：用于结束“当次”循环。
+
+```java
+for(int i = 0; i <= 10; i++){
+    if(i == 3){
+        //break;
+        continue;
+    }
+    System.out.println(i);
+}
+```
+
+```java
+label:for(int i = 0; i <= 10; i++){
+    for(int j = 0; j <= 10; j++){
+        if(j == 3){
+            //break label;
+            continue label;
+        }
+    }
+}
+```
+
+```java
+label:{//continue 不支持结束代码块
+    for(int i = 0; i <= 10; i++){
+        for(int j = 0; j <= 10; j++){
+            if(j == 3){
+                break label;
+            }
+        }
+    }
+    
+    System.out.println("Hello Break!");
+}
+```
+
+# 第四章 方法的声明和使用
+
+## 一、方法
+
+也叫函数，是一个功能的定义，是一个类中最基本的功能单元
+
+
+
+## 二、方法的格式
+
+修饰符 返回值类型 方法名(参数列表){
+
+​	//需要执行的功能语句
+
+​	return 返回值;
+
+}
+
+
+
+修饰符：暂时使用 public static 
+
+返回值类型：说明方法运行后有结果，那个结果的数据类型
+
+参数列表：就是局部变量，可以有0个或多个，每个参数之间以 "," 隔开
+
+**return：用于结束当前方法
+
+返回值：方法运行结束后，那个结果具体的值
+
+
+
+## 三、方法的注意
+
+1、“返回值类型”与“返回值”的数据类型需要保持一致！
+
+2、通过 方法名+参数列表的方式调用方法，调用方法的方法名和参数列表（参数的个数、参数的类型）必须与声明时相同
+
+3、若声明了“返回值类型”说明该方法运行后，有结果，若调用者需要用到该结果，可以声明变量接收
+
+4、若方法运行后不需要返回结果给调用者，则“返回值类型”处声明为：void
+
+​	void：无返回值
+
+5、方法中不能声明方法，可以调用其他方法
+
+
+
+## 四、声明方法前的两点明确
+
+1、是否需要返回结果给调用者（调用者是否需要用结果参与其他运算）
+
+​		明确是否需要返回值，返回值类型是什么
+
+2、是否有未知的数据参与运算
+
+​		明确是否需要参数，需要几个，参数的数据类型
+
+```java
+public class MethodTest{
+    public static void main(String[] args){
+        //需求：计算一个数 * 2 + 1 的结果
+        /*int num = 5;
+        int res = num * 2 + 1;
+
+        num = 7;
+        res = num * 2 + 1;*/
+        
+        //调用已经声明方法
+        int res = result(10);//10 实际参数：用于传递给方法形式参数的具体值
+        print99();
+        print99();
+    }
+    
+    //声明一个方法
+    public static int result(int a){//形式参数：用于接收调用者传递的实际参数值
+        return a * 2 + 1;
+    }
+    
+    //打印 99 乘法表
+    public static void print99(){
+        
+    }
+    
+    //需求：计算两个数的和
+    public static int add(int a, int b){
+        return a + b;
+    }
+}
+```
+
+## 五、跨类调用方法
+
+通过 类名.方法名 的方式进行跨类调用方法（暂时使用 static 修饰的方法为例）
+
+
+
+## 六、参数的值传递:基本数据类型
+
+### 基本数据类型
+
+当将基本数据类型作为参数，传递给方法，方法运行结束后，原值不会发生改变
+
+
+
+```java
+class MethodTest{
+    
+    public static void main(String[] args){
+        int a = 10;
+        int b = 20;
+        add(a, b);
+        System.out.println("a=" + a + " b=" + b);//a=10  b=20
+    }
+    
+    //需求：改变两个数的值
+    public static void add(int a, int b){//方法运行时，参数一定有值
+        a += 1;
+        b += 2;
+    }
+}
+```
+
+![1590716790770](img/1590716790770.png)
+
+
+
+### 引用数据类型:(见第五章)
+
+## 七、方法重载（Overload）
+
+在同一个类中
+
+①方法名相同
+
+②参数列表不同(参数的个数、参数的类型)
+
+注意：与返回值类型无关
+
+
+
+```java
+public static void show(int a, char c){}
+
+public static void show(char c, int a){}
+
+public static int show(int a, char c, double d){}
+```
+
+# 第五章 面向对象编程（上）
+
+## 一、面向过程与面向对象
+
+面向过程：强调的是功能行为
+
+面向对象：将功能行为封装进对象，强调具备了功能行为的对象
+
+
+
+【例子】把大象装冰箱一共分几步？
+
+①打开冰箱 ②把大象装进去（存储大象）③关闭冰箱
+
+
+
+如何运用面向对象思想思考上述问题？
+
+人{
+
+​	推(冰箱){
+
+​		冰箱.关闭()
+
+​	}
+
+
+
+​	指挥(动物){
+
+​		动物.进入()
+
+​	}
+
+
+
+​	拉(冰箱){
+
+​		冰箱.打开()
+
+​	}
+
+}
+
+
+
+冰箱{
+
+​	打开(){}
+
+​	存储(){}
+
+​	关闭(){}
+
+}
+
+
+
+大象{
+
+​	进入(){}
+
+}
+
+
+
+小松鼠(){
+
+​	进入(){}
+
+}
+
+面向对象更加注重前期的设计
+
+①就是对类的设计
+
+②设计类的成员：属性 & 方法
+
+
+
+1、面向对象：将现实生活中一类事物的共性内容，进行提取，抽象成相应的 Java 类，使用 Java 类对其进行描述
+
+现实生活中的事物： 张三  李四  王五
+
+共性内容：姓名 性别  年龄  吃饭的功能 睡觉的功能
+
+
+
+```java
+//抽象的：描述的是现实生活中的“一类”事物
+class Person{
+    //属性
+    String name = "张三";
+    char gender;
+    int age;
+    
+    //方法-行为
+    public void eat(){
+        int a = 10;
+        System.out.println("吃饭");
+    }
+    
+    public void sleep(){
+        System.out.println("睡觉");
+    }
+}
+```
+
+
+
+2、类是抽象的，描述的是现实生活中的“一类”事物。若需要具体到某一个人，**通过 new 关键字创建对象**
+
+```java
+class PersonTest{
+    public static void main(String[] args){
+        //创建 Person 的对象
+        Person p = new Person();
+        //设置属性值
+        p.name = "张三";
+        p.gender = '男';
+        p.age = 18;
+        
+        //获取属性值
+        String n = p.name;
+        System.out.println(n + "," + p.gender + "," + p.age);
+        
+        p.eat();
+        p.sleep();
+        
+        Person p2 = new Person();
+    }
+}
+```
+
+3、类和对象
+
+类：抽象的，描述的现实生活中的一类事物。相当于 汽车设计图
+
+对象：是一个实实在在的个体。 相当于 一辆辆的汽车
+
+![](img/汽车图纸.PNG)
+
+## 二、对象的属性
+
+属性：也叫成员变量，也叫实例变量
+
+
+
+### 1、局部变量&成员变量的区别
+
+①作用域不同
+
+②内存中的位置不同
+
+③成员变量有默认值，局部变量没有默认值（因此局部变量使用前必须赋值）
+
+
+
+### 2、属性的默认值
+
+基本数据类型：
+
+byte  short  int ---> 0
+
+long  ---> 0L
+
+float ---> 0.0F
+
+double  ---> 0.0D
+
+char  --->  '\u0000'
+
+boolean ---> false
+
+
+
+引用数据类型：  --->  null
+
+​	类(class) 
+
+​	接口(interface)
+
+​	数组([])
+
+
+
+### 3、为属性赋初始值的方式
+
+①默认值（缺省值）
+
+②直接显示赋值
+
+
+
+## 三、参数的值传递：引用数据类型
+
+基本数据类型：(见第四章)
+
+引用数据类型:当将引用数据类型作为参数，传递给方法，方法运行结束后，原属性值会发生改变
+
+```java
+class ReviewTest {
+	public static void main(String[] args) {
+		ReviewTest rt = new ReviewTest();
+
+		Number1 num = new Number1();
+		num.a = 10;
+		num.b = 20;
+
+		rt.add(num);
+		System.out.println("num.a=" + num.a + " num.b=" + num.b);//
+	}
+	public void add(Number1 num){//相当于：Number1 num = new Number1()
+		num.a += 1;
+		num.b += 2;
+	}
+}
+
+class Number1{
+
+	int a;
+	int b;
+
+}
+```
+
+![1590804540603](img/1590804540603.png)
+
+## 四、Java 内存管理和垃圾回收
+
+内存管理：
+
+分配：由 JVM 自动的为其分配内存空间
+
+释放：由 JVM 自动的通过垃圾回收机制释放内存空间
+
+
+
+垃圾回收机制（GC Garbage Collection）：将内存中的垃圾对象从内存中释放
+
+
+
+垃圾对象：不再被任何引用指向的对象
+
+
+
+Person p = new Person(); //分配
+
+p = null;
+
+
+
+System.gc() : 通知垃圾回收机制可以释放内存，但是垃圾回收机制并不会立即的执行
+
+​		       通知并加快垃圾回收机制的运行。
+
+## 五、面向对象的特性之一：封装性
+
+1、封装的理解：该隐藏的隐藏起来，该暴露的暴露出来
+
+
+
+2、访问控制修饰符
+
+public : 公共的，可用于修饰属性、方法、类。 任何地方都可以访问
+
+private ：私有的，可用于修饰属性、方法。只能在本类中访问
+
+
+
+3、封装的步骤
+
+①属性私有化(private)
+
+②提供公共的(public) get/set 方法
+
+```java
+class AnimalTest{
+    
+    public static void main(String[] args){
+        Animal ani1 = new Animal();
+        ani1.name = "大象";
+        //ani1.legs = -1000;
+        
+        ani1.setLegs(-1000);
+        
+        int l = ani1.getLegs();
+    }
+    
+}
+
+class Animal{
+    private String name;
+    private int legs; //描述腿的个数
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    //设置属性值
+    public void setLegs(int legs){
+        if(legs >= 0 && legs <= 4 && legs % 2 == 0){
+            this.legs = legs;
+        }
+    }
+    
+    //获取属性值
+    public int getLegs(){
+        return legs;
+    }
+}
+```
+
+
+
+## 六、this 关键字
+
+代表**当前对象**的引用，可用于调用属性、方法、构造器
+
+this.属性
+
+this.方法
+
+this(……) ： 调用本类构造器
+
+​	①this调用本类构造器，必须写在当前构造器中可执行代码的首行
+
+​	②避免构成递归构造器调用
+
+
+
+谁让拥有 this 关键字的方法运行了，谁就是当前对象
+
+
+
+```java
+class AnimalTest{
+    
+    public static void main(String[] args){
+        Animal ani1 = new Animal();
+        ani1.name = "大象";
+        //ani1.legs = -1000;
+        ani1.setLegs(-1000);
+        int l = ani1.getLegs();
+        
+        Animal ani2 = new Animal();
+        ani2.setName("老虎");
+        ani2.setLegs(4);
+    }
+    
+}
+
+class Animal{
+    private String name;
+    private int legs; //描述腿的个数
+    
+    public void setName(String name){
+        this.name = name;//用于区分局部变量和成员变量
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    //设置属性值
+    public void setLegs(int legs){
+        if(legs >= 0 && legs <= 4 && legs % 2 == 0){
+            this.legs = legs;
+        }
+    }
+    
+    //获取属性值
+    public int getLegs(){
+        return legs;
+    }
+    
+    public void show(){
+        this.setLegs("设置属性值");
+    }
+}
+```
+
+## 七、构造器的声明和使用
+
+构造器，也叫构造方法，是类的成员之一。
+
+属性
+
+方法
+
+构造器
+
+
+
+### 1、构造器的格式
+
+​	访问控制修饰符 类名(参数列表){
+
+​		//功能语句
+
+​	}
+
+### 2、构造器的作用
+
+①创建对象
+
+②为对象进行初始化（创建对象的同时具备的属性和功能行为）
+
+
+
+### 3、构造器的注意
+
+①构造器的名称必须与类名一致！
+
+②**若一个类中没有显示提供任何构造器时，系统会提供一个默认的无参构造器
+
+​	public Person(){}
+
+③**若一个类中显示的提供了任何一个构造器，系统默认无参构造器将不再提供
+
+④构造器只能调用一次，并且是在创建对象的时候
+
+⑤构造器之间可以构成重载
+
+
+
+### 4、构造器的重载
+
+使用在同一个类中
+
+①构造器的名称相同
+
+②参数列表不同（参数的个数、参数的类型）
+
+
+
+### 5、为属性赋初始值的方式
+
+①默认值（缺省值）
+
+②直接显示赋值
+
+③构造器赋值
+
+顺序：①②③
+
+
+
+```java
+class ConstructorTest{
+    
+    public static void main(String[] args){
+        Person p = new Person();
+        //p.cry();
+        
+        Person p1 = new Person();
+        //p1.cry();
+        
+        Person p2 = new Person("张三");
+    }
+    
+}
+
+class Person{
+
+	private String name;
+    private int age;
+    
+    //声明一个构造器
+    public Person(){
+        cry();
+    }
+    
+    public Person(String name){
+        //this(name, 18);构成递归构造器调用，需要避免该情况的发生
+        this.name = name;
+    }
+    
+    public Person(String name, int age){
+        this(name);
+        this.age = age;
+    }
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public void cry(){
+        System.out.println("哭……");
+    }
+    
+}
+```
+
+## 八、包的管理
+
+包的作用：
+
+①用于区分重命名
+
+②用于控制访问权限
+
+③用于划分项目结构层次，通常将功能相近的类划分到同一个包中
+
+
+
+package：用于确定当前类的位置
+
+​	①写在当前 .java 源文件中可执行代码的首行
+
+​	②包的命名规范：所有字母都小写。（通常使用所在公司域名的倒置）
+
+​		www.atguigu.com  -->   com.atguigu.项目名.模块名
+
+​	③每个 "." 代表一层目录
+
+
+
+import ： 用于确定需要引入类的位置
+
+​	①写在 package 与 class 之间
+
+​	②import 语句可以有多条，并排列出
+
+​	③import com.atguigu.java.* : 代表导入 java 包中所有的类和接口。（不包括包）
+
+​	④若在一个类中使用两个相同类名不同包名的两个类时
+
+​		如：java.sql.Date    java.util.Date
+
+​		选择一个使用 import java.sql.Date 导包的方式
+
+​		选择另外一个使用全限定类名（全类名）java.util.Date date = new java.util.Date();
+
+​	⑤import static 静态导包，可以导入一个类中所有的静态成员。（可以省略 类名.）
+
+# 第六章 数组的声明和使用
+
+用于批量保存一类数据，是引用数据类型之一
+
+
+
+## 一、声明一个数组
+
+变量的格式：数据类型 变量名 = 值;
+
+int a = 10;
+
+int b;
+
+b = 20;
+
+```java
+int[] scores;
+String[] names;
+Person[] persons;
+```
+
+
+
+## 二、为数组初始化并赋值
+
+1、静态初始化：初始化操作和赋值操作同时进行
+
+```java
+scores = new int[]{1,2,3,4,5};
+```
+
+2、动态初始化：初始化操作和赋值操作分开进行
+
+```java
+names = new String[3];
+names[0] = "张三";
+names[1] = "李四";
+names[2] = "王五";
+```
+
+```javascript
+persons = new Person[3];
+persons[0] = new Person();
+persons[1] = new Person("张三", 18);
+persons[2] = new Person("李四", 20);
+```
+
+## 三、数组的遍历
+
+```java
+int s = scores[0];
+System.out.println(s);
+System.out.println(scores[1]);
+System.out.println(scores[2]);
+System.out.println(scores[3]);
+System.out.println(scores[4]);
+```
+
+
+
+### 1、普通 for 循环遍历数组
+
+```java
+for(int i = 0; i < scores.length; i++){
+	int a = scores[i];
+    System.out.println(a);
+}
+```
+
+```java
+for(int i = 0; i < persons.length; i++){
+    Person p = persons[i];
+    System.out.println(p.say());
+}
+```
+
+### 2、增强 for 循环遍历数组
+
+for(被遍历数组中元素的数据类型 变量名 :  被遍历的数组){
+
+}
+
+```java
+for(int a : scores){
+    System.out.println(a);
+}
+```
+
+```java
+for(Person p : persons){
+    System.out.println(p.say());
+}
+```
+
+```java
+//注意:增强 for 循环不擅长修改数组中元素的值
+//需求：改变数组中元素的值
+for(int a : scores){
+    if(a == 2){
+        a = 22;//改变变量 a 的值，与数组中元素的值没关系
+    }
+}
+```
+
+```java
+for(int i = 0; i < scores.length; i++){
+    if(scores[i] == 2){
+        scores[i] = 22;
+    }
+}
+```
+
+```java
+for(Person p : persons){
+    if(p.getAge() == 18){
+        p.setAge(22);
+    }
+}
+
+for(Person p : persons){
+    System.out.println(p.getAge());
+}
+```
+
+## 四、数组的特点
+
+1、数组无论静态初始化还是动态初始化必须指明长度
+
+2、数组中每个元素都具有索引值（下角标、下标），索引值从0开始，到数组的长度 - 1.
+
+3、获取数组长度的属性：length
+
+
+
+## 五、数组的默认值
+
+基本数据类型：
+
+byte short int --> 0
+
+long --> 0L
+
+float --> 0.0F
+
+double --> 0.0D
+
+char --> '\u0000'
+
+boolean --> false
+
+
+
+引用数据类型： --->  null
+
+​	|--类(class)
+
+​	|--接口(interface)
+
+​	|--数组([])
+
+## 六、数组的常见异常
+
+```java
+int[] arr = new int[5];
+arr[8] = 100; //ArrayIndexOutOfBoundsException 数组下标越界异常
+```
+
+```java
+Person[] persons = new Person[3]; //{new Person("张三"， 18), null, null}
+persons[0] = new Person("张三"， 18)；
+
+for(Person p : persons){
+	System.out.println(p.say());//null.say()
+}//NullPointerException 空指针异常
+```
+
+## 七、二维数组
+
+### 1、声明一个二维数组
+
+```java
+int[][] arr;
+```
+
+
+
+### 2、为二维数组初始化并赋值
+
+①静态初始化：初始化操作和赋值操作同时进行
+
+```java
+arr = new int[][]{  {1,2,3}, {4,5,6}, {7,8}  };
+```
+
+②动态初始化：初始化操作和赋值操作分开进行
+
+​	方式一：
+
+```java
+arr = new int[3][4];//{ {0,11,0,0}, {0,0,66,0}, {0,0,0,0} }
+arr[0][1] = 11;
+arr[1][2] = 66;
+```
+
+​	方式二：
+
+```java
+arr = new int[3][];//{ null, {0,66}, {0,0,0} }
+arr[1] = new int[2];
+arr[2] = new int[3];
+
+arr[1][1] = 66;
+```
+
+### 3、二维数组的遍历
+
+```java
+//从二维数组中获取一个个的以为数组
+for(int i = 0; i < arr.length; i++){
+    int[] as = arr[i];
+    
+    //从一维数组中取出一个个的 int 类型的数据
+    for(int j = 0; j < as.length; j++){
+        System.out.print(as[j] + "\t");
+    }
+    System.out.println();
+}
+
+//从二维数组中获取一个个的以为数组
+for(int i = 0; i < arr.length; i++){
+    //从一维数组中取出一个个的 int 类型的数据
+    for(int j = 0; j < arr[i].length; j++){
+        System.out.print(arr[i][j] + "\t");
+    }
+    System.out.println();
+}
+```
+
+```java
+for(int[] as : arr){
+    for(int a : as){
+        System.out.print(a + "\t");
+    }
+    System.out.println();
+}
+```
+
+## 八、命令行参数(了解)
+
+```java
+class HelloWorld{
+    public static void main(String[] args){//args : 命令行参数
+        for(int i = 0; i < args.length; i++){
+            System.out.println(args[i]);
+        }
+        
+        //将 String 转换成 int
+        int num = Integer.parseInt(args[0]);
+    }
+}
+//通过运行命令 java HelloWorld "aaa bbb" ccc  传递一些测试数据
+```
+
+
+
+## 九、可变参数
+
+注意：
+
+​	①可变参数与数组参数之间不能构成重载
+
+​	②可变参数必须写在参数列表的末尾
+
+```java
+public static void main(String[] args){
+    //int[] arr = {1,2,3,4,5}; 
+    //int sum = add(arr);//每次调用该方法，需要创建一个数组，有点麻烦
+    
+    add(1,2,3,4,5);//
+}
+
+//需求：计算两个整数的和
+/*public int add(int a, int b){
+    return a + b;
+}
+
+//需求：计算三个整数的和
+public int add(int a, int b, int c){
+    return a + b + c;
+}*/
+
+//需求：计算 N 个整数的和
+/*public static int add(int[] arr){
+    int sum = 0;
+    for(int i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    return sum;
+}*/
+
+//可变参数低层是数组，数组中数据如何取，可变参数中的数据就如何取
+public static int add(int ... arr){//可变参数，调用该方法时可以传递 0 个或 多个 int 类型的数据
+    int sum = 0;
+    for(int i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    return sum;
+}
+
+public static void add(String ... args){
+    
+}
+
+public static void add(double d1, Person ... persons){
+    
+}
+```
+
