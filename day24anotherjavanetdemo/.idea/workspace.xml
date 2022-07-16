@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="javanetModule5:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2a73aa6-b124-4c07-a3a5-cbabf31f78ac" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="javanetdemo" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>System</find>
+      <find>finish</find>
+      <find>System.out.p</find>
+      <find>write</find>
+    </findStrings>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Program_Files\maven\repository" />
+        <option name="mavenHome" value="D:/Program_Files/maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\Program_Files\maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2BlB9uDwuACiBkcI0Gg8qCAAYSt" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576746466992" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\workspaceidea\javanetdemo\javanetModule7\src" />
+      <recent name="E:\workspace\workspaceidea\javanetdemo\javanetModule5\src\cn\ybzy\demo" />
+      <recent name="D:\workspace\workspaceidea\javanetdemo\javanetModule3\src\cn\ybzy\demo" />
+      <recent name="D:\workspace\workspaceidea\javanetdemo\javanetModule2\src\cn\ybzy\demo" />
+      <recent name="D:\workspace\workspaceidea\javanetdemo\untitled\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.ybzy.demo.Client" />
+      <module name="javanetModule2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ybzy.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.ybzy.demo.Demo3" />
+      <module name="javanetModule1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ybzy.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.ybzy.demo.Demo4" />
+      <module name="javanetModule1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ybzy.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.ybzy.demo.Demo5" />
+      <module name="javanetModule1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ybzy.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.ybzy.demo.Server" />
+      <module name="javanetModule2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.ybzy.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Demo3" />
+      <item itemvalue="Application.Demo4" />
+      <item itemvalue="Application.Demo5" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Client" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Demo5" />
+        <item itemvalue="Application.Demo4" />
+        <item itemvalue="Application.Demo3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2a73aa6-b124-4c07-a3a5-cbabf31f78ac" name="Default Changelist" comment="" />
+      <created>1575772441431</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575772441431</updated>
+      <workItem from="1575772442631" duration="10032000" />
+      <workItem from="1575806883420" duration="6957000" />
+      <workItem from="1575860357108" duration="3912000" />
+      <workItem from="1575970645855" duration="12076000" />
+      <workItem from="1575991034528" duration="310000" />
+      <workItem from="1575991447292" duration="445000" />
+      <workItem from="1576030362872" duration="1280000" />
+      <workItem from="1576033487148" duration="2372000" />
+      <workItem from="1576039352072" duration="7713000" />
+      <workItem from="1576049207748" duration="5337000" />
+      <workItem from="1576066319506" duration="766000" />
+      <workItem from="1576114327852" duration="12816000" />
+      <workItem from="1576137909841" duration="480000" />
+      <workItem from="1576150216082" duration="2403000" />
+      <workItem from="1576200348559" duration="1666000" />
+      <workItem from="1576211055519" duration="6973000" />
+      <workItem from="1576234565955" duration="11958000" />
+      <workItem from="1576248721047" duration="2606000" />
+      <workItem from="1576251548066" duration="221000" />
+      <workItem from="1576294393658" duration="11764000" />
+      <workItem from="1576317162694" duration="4027000" />
+      <workItem from="1576330848460" duration="605000" />
+      <workItem from="1576373174314" duration="24977000" />
+      <workItem from="1576493503464" duration="2808000" />
+      <workItem from="1576550199667" duration="2772000" />
+      <workItem from="1576559817577" duration="7270000" />
+      <workItem from="1576573006194" duration="12975000" />
+      <workItem from="1576626688925" duration="478000" />
+      <workItem from="1576632612192" duration="421000" />
+      <workItem from="1576634097799" duration="11793000" />
+      <workItem from="1576658120844" duration="1539000" />
+      <workItem from="1576665041022" duration="5658000" />
+      <workItem from="1576721308679" duration="11740000" />
+      <workItem from="1576739126446" duration="4518000" />
+      <workItem from="1657470644584" duration="476000" />
+      <workItem from="1657543521145" duration="5599000" />
+      <workItem from="1657634246653" duration="1359000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>javanetModule5:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>javanetdemo</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
