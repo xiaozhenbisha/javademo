@@ -719,7 +719,722 @@ Eclipse是使用Java 语言开发的，所以Eclipse可运行在任何的Java运
 
 请你到Eclipse的下载网址（http://www.eclipse.org/download ）下载Eclipse IDE for Java Developers，并解压缩该文件，到解压缩之后的文件夹中找到eclipse.exe，为其创建桌面快捷方式。
 
+## **2.5 开发一个简单的Java程序**
+
+### 主体内容
+
+你将实际开发一个简单的Java程序。通过实际操作，你将了解使用JDK开发Java程序的基本方法和使用Eclipse开发Java程序的基本方法。
 
 
 
+### 活动1：创建一个用于练习Java编程的工作目录
 
+请你在D:盘上创建一个文件夹“JavaPrograms”，即目录“D:\JavaPrograms”，用于存放平时练习Java编程的文件。
+
+
+
+### 活动2：观看一个使用JDK开发"Hello world"程序的视频
+
+下面的视频介绍了使用JDK开发Java程序的方法。请观看下面的视频。
+
+![image-20220721234014418](C:\Users\wzn\AppData\Roaming\Typora\typora-user-images\image-20220721234014418.png)
+
+**1.先编写一个Java源程序文件。**使用记事本编辑“Hello World”程序。
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java2.5.html?node=858292427&detailRecordId=1315571824&studyrecordId=1225624963&sectionRecordId=1229924099#)
+
+```
+public` `class` `HelloWorld {``   ``public` `static` `void` `main(String[] args) {``     ``System.out.println(``"Hello World"``);``   ``}``}
+```
+
+保存程序到工作目录“D:\JavaPrograms”中，保存类型选“所有文件”，文件名为“HelloWorld.Java”。
+
+【创建一个对象之后，它的数据和方法可以使用圆点运算符（. ）来访问和调用，该运算符也称为对象成员访问运算符（Object member access operator）；本书后面的附录还包括了对其它运算符的说明。】
+
+**2.接下来要编译程序和运行程序。**
+
+JDK提供的Java程序的编译器和解释器都是命令行工具。要使用它们要先启动命令提示符窗口。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 启动方法是：
+
+单击屏幕左下角的，Windows的「开始」按钮，在「开始」菜单，在搜索框中键入命令——cmd，然后按“Enter”键，打开命令提示符窗口。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 接下来要进入到源程序文件所在目录：
+
+在命令提示符窗口中键入D：，按回车键，计入D:盘。键入cd JavaPrograms，进入目录JavaPrograms。键入dir，按回车键，查看一下当前目录下的文件。这个HelloWord.java就是刚才编写的Java源程序文件。
+
+**3.现在用Java编译器这个源程序。**
+
+在cmd命令提示符窗口中，用Java.exe运行程序。在命令提示符窗口中键入javac，这是Java编译器程序名，之后键入空格，再键入Java源程序的名字——HelloWorld.Java，然后按回车键。如果没有看到错误提示，则表示编译通过。然后键入dir命令，会看到这里有一个HelloWorld.class，这是编译后得到的字节码形式的类文件。
+
+**4.下面运行程序。**
+
+在cmd命令提示符窗口中键入java，这是Java解释器程序名，之后键入Java程序的类名——HelloWorld，然后按回车键，就会看到程序的运行结果。
+
+**5.关于类路径。**
+
+重新启动一个命令提示符窗口。
+
+**编译程序：**javac D:\JavaPrograms\HelloWorld.java。
+
+**运行程序：**java HelloWorld。
+
+**会看到“错误：**找不到或无法加载主类HelloWorld”。
+
+这与Java虚拟机加载类的方式有关。JVM和其它JDK工具通过依次搜索平台库、库扩展和类路径来查找类。这个类路径是在环境变量CLASSPATH中设置的路径。由于我们刚才编译得到的HelloWorld类的class文件既没在平台库中，也没在库扩展中，也没在CLASSPATH所指定的类路径中，所以JVM找不到这个类，从而无法加载执行它。下面我们在CLASSPATH所指定的类路径加入HelloWorld类所在的目录，再看一下执行结果。
+
+**键入命令：**set CLASSPATH=%CLASSPATH%;D:\JavaPrograms，HelloWorld的class文件就在D:\JavaPrograms目录下，我们把这个目录添加到CLASSPATH中。
+
+**键入命令：**java HelloWorld
+
+可以看到JVM能够找到这个类，并执行它了。
+
+活动2的解析： 开发Java程序的一些基本概念
+
+**(1) 开发程序的步骤**
+
+开发程序的基本过程分为三步：编辑、编译和运行。 所谓编辑，就是编辑源程序。高级程序设计语言的源程序都是文本文件，可以用任何的文本编辑器编辑。所谓编译，就是将源程序编译成二进制代码的形式。通常使用专门的编译程序将源程序编译成二进制代码。对于C、C++这样的语言来说，编译后得到的二进制代码通常是可执行的目标代码，即该代码可以在目标计算机平台上直接执行。而Java则不同，Java的编译器将Java源程序编译后得到的二进制代码并不能直接在目标主机平台直接执行。虽然编译后的文件是二进制的，但其指令格式和数据格式都是Javaz自己特有的，与任何特定的平台，如Intel、AMD、ARM或MC68等都不同，所以没法直接执行。一般地，人们将Java源程序编译后得到的二进制文件称为字节码文件，因为文件以字节文基本单位。字节码文件的格式、含义和作用由Java虚拟机规范规定。Java虚拟机规范目前有Oracle控制。Java的字节码文件要放到Java虚拟机上执行。你要在主机平台上装一个Java虚拟机（程序），然后在Java虚拟机中运行Java的字节码文件——即Java程序。
+
+**(2) Java源程序文件名的一个约定**
+
+Java源程序如果包含公有类，如本例，则源程序文件名应该与公有类的类名相同。
+
+**(3) Java的编译器**
+
+JDK提供的工具javac.exe是Java的编译程序，用于把Java源程序编译成字节码文件。
+
+**(4) Java的解释器**
+
+JDK提供的工具java.exe是Java的解释器，用于解释执行Java字节码文件。当用java.exe执行Java程序的时候，java.exe会启动一个Java虚拟机，用这个Java虚拟机执行Java字节码文件。
+
+**(5) Java的编译单元**
+
+为Java 创建一个源文件的时候，它通常叫做一个“编译单元”（有时也叫做“翻译单元”）。每个编译单元都必须有一个以.java 结尾的名字。而且在编译单元的内部，可以有一个公有（public）类，它必须拥有与文件相同的名字（包括大小写形式，但排除.java 文件扩展名）。如果不这样做，编译器就会报告出错。每个编译单元内都只能有一个public 类（同样地，否则编译器会报告出错）。那个编译单元剩下的类（如果有的话）可在那个包外面的世界面前隐藏起来，因为它们并非“公有”的（非public），而且它们由用于主public 类的“支撑”类组成。
+
+编译一个.java 文件时，编译器会为此源文件中的每个类单独生成一个.class文件，且每个.class文件的文件名就是该类的类名。因此，当你编译少量的.java 文件里时有可能获得数量众多的.class 文件。如你以前用一种汇编语言写过程序，那么可能已习惯编译器先分割出一种过渡形式（通常是一个.obj 文件），再用一个链接器将其与其他东西封装到一起（生成一个可执行文件），或者与一个库封装到一起（生成一个库）。但那并不是Java 的工作方式。一个有效的程序就是一系列.class 文件，它们可以封装和压缩到一个JAR 文件里（Java归档文件）。Java 解释器负责对这些文件的寻找、装载和解释。
+
+**PS：**本例中只有一个类——HelloWorld，因此编译后只有一个HelloWorld.class文件。你可以自己试着在一个源程序文件中写多个类，然后编译，看看最后由多少个.class文件。
+
+**(6) 圆点运算符（.）**
+
+创建一个对象之后，它的数据和方法可以使用圆点运算符（.）来访问和调用，该运算符也称为对象成员访问运算符（Object member access operator）。
+
+
+
+### 活动3：亲自用JDK开发“Hello World”程序
+
+请你按照下述步骤亲自用JDK开发活动2的视频中的“hello World”程序。
+
+**Step 1.** 使用记事本编辑“Hello World”程序。
+
+
+
+```
+public class HelloWorld {
+    public static void main(String[] args) {  
+    System.out.println("Hello World");
+    }
+    }
+```
+
+保存程序到工作目录“D:\JavaPrograms”中，保存类型选“所有文件”，文件名为“HelloWorld.Java”。
+
+**Step 2.** 打开cmd命令提示符窗口，用javac.exe编译上述源程序。
+
+**Step 3.** 在cmd命令提示符窗口中，用Java.exe运行程序。
+
+
+
+### 活动4：观看一个使用Eclipse开发“Hello Kitty”程序的视频
+
+下面的视频介绍了使用Eclipse开发Java程序的方法。请观看下面的视频。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/vid2-5.png)
+
+**视频2-5：使用Eclipse开发“Hello Kitty”程序**
+
+1. 启动Eclipse，设置Eclipse的工作空间（Workspace）。
+
+2. 新建一个Java项目。
+
+3. 在该Java项目中新建一个类。
+
+4. 编辑该类的源程序。
+
+5. 运行该程序。
+
+**活动4的解析**： Eclipse集成开发环境的一些基础知识
+
+**（1）使用集成开发环境开发Java程序更方便**
+
+Eclipse是一个集成开发环境，提供了编辑、编译和运行Java程序的基本工具和一些附加的（插件）组件和服务。用Eclipse之类的集成开发环境开发Java程序比直接用JDK开发Java程序方便多了。PS：软件公司基本都用集成开发环境开发Java程序。
+
+**（2）Java项目与Eclipse的工作空间**
+
+开发一个完成的Java程序可能需要一系列的程序文件、资源文件和其它相关文件，把它们放到一个“Java项目”中便于管理。一般地，都是先创建一个“Java项目”，然后把所有与此项目相关的东西都放到这个Java项目中。而Eclipse的“工作空间”的概念就是一个存放Java项目的磁盘目录，在一个工作空间中可以存放多个Java项目。
+
+**（3）Eclipse的代码生成功能**
+
+理论上，编辑源程序是一个字符地、一个字符地“敲”，就像视频2-4中所做的那样。但如果真的那么做，编写一个几十万行的程序，岂不是要累死了！有些机械性的重复工作其实可以让开发工具去做，程序员只做那些“必要”的工作就成了。Eclipse中的代码生成功能，以及下面将讲到的自动代码补齐功能、代码提示功能就用来完成哪些机械性的重复工作，减轻你的工作负担。
+
+Eclipse具有代码自动生成功能，能提高开发效率。本例中，新建一个类的时候，Eclipse会打开一个Java编辑器窗口，供开发者编辑Java源程序。细心的你可以看到，Java编辑器窗口中已经有了类的声明部分以及界定类体的那对儿花括号。而且如果你在“New Java Class”对话框中选中了“public static void main(String[] args)”前面的复选框，那么在还会已经有了Java Application程序的main()方法。这些都是Java编辑器自动生成的。这样就不用你自己去敲字符了，省事儿多了吧？
+
+除了上述基本代码之外，Eclipse还可以自动生成很多代码，比如根据底层数据结构生成Hibernate持久化访问的POJO、XML迎神文件、DAO；根据页面表单设计生成所需的ActionForm等。你在它自动生成的代码基础上进行编辑和修改，既提高了代码规范性，也提高了开发效率。
+
+**PS：**你可以尽可能多地利用它的代码生成功能。
+
+**（4）Eclipse的自动代码补齐功能**
+
+在本例中，当输入一个左括号的时候，你会看到Java编辑器自动添加了与之配对儿的右括号；当输入一个左边双引号的时候，Java编辑器自动添加了与之配对儿的右双引号。这些都是“自动代码补齐”功能完成的。
+
+Eclipse还具有很多其它的自动代码补齐功能，如编辑XML文档时，你输入一个开始标签，Eclipse会自动为它添加一个结束标签等。这种自动代码补齐功能可以为你减少很多敲字符的工作量。
+
+**PS：**你可以尽可能多地利用它的自动代码生成功能。
+
+**（5）Eclipse的代码提示功能**
+
+本例中，当输入“System”，然后输入“.”之后，稍等一会儿，Java编辑器会自动在“.”之后提示系统类System的方法和属性，提示开发者下一步可以键入的代码。你还可以用上下键选中列表中的某个方法或某个属性，然后按下回车键，这样选中的方法或属性的代码就被自动添加到“.”的后边。不但自动提示，还自动添加，这样就很方便了。
+
+**PS：**编辑程序的时候，有时Eclipse没有给出自动提示，此时可以使用组合键【Alt+/】来获取代码提示。
+
+**（6）Eclipse的自动编译**
+
+刚才看的视频中没有“编辑”就直接“运行”了，这是怎么回事呢？答案在于Eclipse的自动编译。Eclipse默认设置自动编译Java源程序，只要在你的eclipse中建好包结构和编辑好java文件。点击保存，eclipse就会去编译这个文件.然后把编译好的.class文件放入你指定的目录中或是默认目录。你可以配置不自动编译的，你可以看看windows-preference里的设置。java选项里面的。在project选项里面有个重新编译的选项，不过是对整个project而言的。有时你想重新编译一下，你可使用Project->Build Project 来编译当前的项目。
+
+**（7）Eclipse的错误提示功能**
+
+当你在Eclipse的Java编辑器窗口啊编写源程序时，有时会因为不小心或其它原因使得程序有些错误，此时Java编辑器会给程序实时错误提示，以便你修正错误。例如，在本例中，如果在“System.out.println("HelloWorld");”一行中不小心把分号敲成了中文的分号，则可以看到本行左边出现了一个红色的小叉，这就是错误提示。把鼠标放到红色的小叉上，Java编辑器会给你提示错误原因，以便你修改程序，如图2.1所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i1.png)
+
+**图2.1 Eclipse的俄错误提示**
+
+除了实时错误提示之外，Java编辑器也会给出一些实时警告提示，例如图2.2中的警告提示显示变量s在本程序中没有用。当然，这不是错误，不影响程序执行。只是如果变量s如果真的没用的话，最好把当前这个变量声明语句删除掉。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i2.png)
+
+**图2.2 Eclipse的警告提示**
+
+
+
+### 活动5：亲自用Eclipse开发“Hello Kitty”程序
+
+请你按照下述步骤亲自用Eclipse开发活动4的视频中的“hello Kitty”程序。
+
+**Step 1.** 启动Eclipse。
+
+**Step 2.** 设定Eclipse的工作空间为“D:\JavaPrograms”。
+
+**Step 3.** 新建一个项目Prj0。
+
+**Step 4.** 在项目Prj0中新建一个Class。设定类名为“HelloKitty”，并让Java编辑器自动生成main()方法。
+
+**Step 5.** 在Java编辑器中编辑缺少的程序代码。最终的程序如下：
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java2.5.html?node=858292427&detailRecordId=1315571824&studyrecordId=1225624963&sectionRecordId=1229924099#)
+
+```
+public` `class` `HelloKitty {``  ``public` `static` `void` `main(String[] args) {``    ``// TODO Auto-generated method stub``   ``System.out.println(``"Hello Kitty"``);``  ``}``}
+```
+
+**Step 6.** 保存源程序。
+
+**Step 7.** 运行程序，观察结果。
+
+## **2.6 Eclipse的基本使用方法**
+
+### Eclipse平台简介
+
+Eclipse 是基于Java 的、开放源代码的可扩展开发平台，它最初由IBM 公司投入巨资开发，后来被捐赠给国际开放源代码团体。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。幸运的是，Eclipse附带了一个标准的插件集，包括了Java 开发工具（Java Development Tools，JDT）。
+
+Eclipse的基础是Eclipse平台（Eclipse Platform），Eclipse平台提供软件开发工具的集成服务。所有开发工具（包括JDT 和PDE）都是用插件的形式提供的，这种设计使得Eclipse具有开放式可扩充的结构。比如，想开发C/C++程序，装一个C语言开发工具（C Development Toolkit，简称CDT）插件代替JDT 即可。同理，通过开发相应插件，Eclipse 也可以用来开发微软的C#程序。Eclipse设计的成功之处在于，除了小部分运行的核心，其他都是插件。
+
+Eclipse 项目由Project Management Committee(PMC)所管理，它综观项目全局，Eclipse 项目分成3个子项目：
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 平台--Platform
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 开发工具箱--Java Development Toolkit(JDT)
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 外挂开发环境--Plug-in Development Environment(PDE)
+
+这些子项目又细分成更多子项目。例如Platform 子项目包含数个组件，如Compare、Help 与Search。JDT 子项目包括三个组件：User Interface(UI)、核心(Core)及调试(Debug)。PDE 子项目包含两个组件：UI 与Core。
+
+Eclipse 软件开发工具箱（SDK）是由Eclipse 项目的上述3个子项目的组件组合而成的单一可下载包。所有基于Eclipse的工具都在Eclipse平台上创建。Eclipse平台又可以进一步划分如下。
+
+（1）Ant：Java程序构建工具。
+
+（2）Compare：通用比较工具。
+
+（3）Core：核心库。
+
+（4）Debug：通用调试器。
+
+（5）Help：帮助系统。
+
+（6）Scripting：脚本支持。
+
+（7）Search：集成的搜索工具。
+
+（8）SWT：标准小窗口工具箱。
+
+（9）UI：用户界面。
+
+（10）Update：动态更新/安装服务。
+
+（11）VCM：版本化和配置管理。
+
+（12）WebDAV：WebDAV 集成。
+
+
+
+### Eclipse体系结构
+
+Eclipse 平台的主要任务是为开发者提供能够使各种工具无缝集成的机制和需遵守的规则，这些机制通过具有良好定义的应用程序接口（API）、类和方法表现出来。本质上，Eclipse是一组松散绑定但互相连接的代码块。如果搞清楚这些代码块如何被“发现”，以及它们之间如何相互发现和扩展，就能了解Eclipse 体系结构的基本原理。Eclipse 平台的结构如图2.3所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i3.png)
+
+**图2.3 Eclipse平台体系结构**
+
+**（1）平台运行时（Platform Runtime）**
+
+平台运行时是Eclipse平台核心运行时的简称。Eclipse体系结构的关键就是如何动态发现插件，平台运行时恰恰负责管理、发现和启动已经安装的插件。为了节省内存，只有当用户选择了插件的功能以后，插件才被载入和初始化。插件一旦激活，就可以使用插件注册表来发现和存取基于它的扩展点的扩展。
+
+**（2）工作空间（Workspace）**
+
+Eclipse 平台体系结构的重点在于工作空间。用户的工作空间是指通过插件技术插入到Eclipse平台的各种工具的操作范围。工作空间维护构建和测试软件项目所需要的一切工具，这些工具通过工作空间定义的API来使用工作空间的资源。工作空间的资源不仅包括对象、源代码和资源，还包括项目、IDE 和插件的配置设置。
+
+工作空间由一个或多个项目组成，每个项目映射到对应用户的文件系统目录，不同的项目可能映射到不同的文件系统目录或驱动器。每个项目还可以包含任意数目的文件和文件夹，文件可以由用户创建，并且能被用户操作使用。在如图2.4 所示的“导航器”视图中可以看到项目资源的树形组织形式。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i4.png)
+
+**图2.4 Eclipse的“导航器”视图**
+
+所有的在工作空间中的文件都可以直接被操作系统下的标准程序和工具存取。与平台集成的工具提供了用于处理工作空间资源的应用程序接口。由于工作空间资源是用可适配对象表示的，其他开发人员就可以扩展它的行为。
+
+**（3）工作台（Workbench）**
+
+Eclipse平台是由组件构成的，其中最基础的组件就是Eclipse工作台。启动Eclipse后，工作台是主要的工作窗口，如图2.5所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i5.png)
+
+
+
+Eclipse 平台界面正是搭建在这个提供整体结构并向用户提供可扩展界面的工作台之上的。Eclipse 工作台只是用来创建、管理和导航项目和资源（例如文件和文件夹等），它不知道如何编辑、运行以及测试Java 程序，这些工作都是由其他功能组件来完成的，例如Java开发工具JDT。
+
+**（4）SWT和JFace**
+
+工作台是构建在SWT和JFace两个工具包之上的。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) **SWT：**一个小窗口工具集合，它与本地窗口系统集成，并且提供了独立于操作系统的应用程序接口的图形库。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) **JFace：**一个用SWT 实现的用户界面工具包，它提供了难以实现的、用于开发用户界面的helper 类，进而简化了常用的界面编程任务。
+
+图 2.6所示给出了Eclipse、JFace和SWT之间的关系。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i6.png)
+
+**图2.6 Eclipse、JFace和SWT之间的关系**
+
+**（5）外部工具（External Tools）**
+
+外部工具允许在工作台下配置和运行程序、批处理文件、Ant 构建文件和其他对象，并且可以保存外部工具配置以便将来使用它们。外部工具的输出会在控制台视图显示。
+
+可以添加外部工具，将其作为项目构建进程的一部分。每次构建项目时，这些外部工具都会按特定的顺序来执行。
+
+
+
+### Eclipse 的工作台
+
+工作台是指桌面编程环境，工作台的外在表现为“工作台”窗口。每个工作台窗口包括至少一个透视图，透视图又包含视图和编辑器，并且控制在菜单栏和工具栏显示的内容。多个工作台窗口可以同时存在。
+
+**（1）视图（View）**
+
+工作台有许多不同种类的内部窗口，称为视图(view)，以及一个特别的窗口--编辑（editor）。之所以称为视图，是因为这些窗口以不同的视野来看整个项目，例如图2.7所示的Outline的视图可以看项目中Java类别的概略状况，而图2.4所示的Navigator的视图可以导览整个项目。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i7.png)
+
+**图2.7 Eclipse 的Outline视图**
+
+视图有两个菜单，第一个允许对视图进行操作。右键点击视图的标签就会弹出该菜单，如图2.8所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i8.png)
+
+**图2.8 视图标签的右键菜单**
+
+第二个菜单，称为“视图下拉菜单”，可以通过单击向下的箭头来访问。视图下拉菜单包含对视图所有内容而不是视图中特定项的操作。排序和过滤的操作可以在视图下拉菜单找到，如图2.9所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/i9.png)
+
+**图2.9 视图下拉菜单**
+
+视图还有一个工具栏，单击工具栏中的工具按钮可以使用该工具，如图2.10所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z1.png)
+
+**图2.10 视图的工具栏**
+
+使用菜单栏的“WindowShow View”下面的级联菜单项，可以显示某个视图。视景决定了需要哪个视图。根据不同的视景，在“WindowShow View”下面的级联菜单项显示的视图选项也不一样。选择“其它”，就可以获得其它视图，如图2.11所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z2.png)
+
+**图2.11 “WindowShow View”下面的Other级联菜单项**
+
+**（2）编辑器（Editor）**
+
+编辑器是特殊的窗口，出现在工作台的中央。当打开文件、程序代码或其它资源时，Eclipse会选择最适当的编辑器打开文件。若是纯文字文件，Eclipse就用内建的文字编辑器打开；若是Java程序代码，就用JDT的Java编辑器打开；若是Word文件，就用Word打开。此Word窗口会利用Object Linking and Embedding-OLE，内嵌在Eclipse中。JDT的Java编辑器如图2.12所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z3.png)
+
+**图2.12 编译器**
+
+**（3）视景（Perspective）**
+
+有人把视景（Perspective）翻译为透视图。Eclipse中的视图和编辑器很多，为了使用方便，Eclipse根据任务的不同把视图和编辑器预先划分为不同的类别，且预设好视图的排列方式，并把每一个类别称为一个视景。每个视景是一组预定好的视图，所有视景的主要组件是编辑器。每个视景的目的是执行某特定的工作，在每个视图以各种不同的观点处理工作，如编写Java程序所用的视景为如图2.13 所示的“Java”视景，调试程序所用的视景为如图2.14所示的“Debug”视景。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z4.png)
+
+**图2.13 “Java”视景**
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z5.png)
+
+**图2.14 “Debug”视景**
+
+打开某个视景的方法有两种：
+
+**A. 点击快捷方式栏上的“Open Perspective”按钮，**如图2.15所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z6.png)
+
+**图2.15 快捷方式栏上的“Open Perspective”按钮**
+
+在弹出的“Open Perspective”对话框中选择要打开的视景，如图2.14所示，然后点击“OK”按钮，则可以打开相应的视景，如图2.16所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z7.png)
+
+**图2.16 “Open Perspective”对话框**
+
+或者使用【窗口→打开透视图】子菜单，在弹出的菜单里选择 【其他】，如图3-2所示
+
+**B. 使用菜单栏的“WindowPerspectiveOpen Perspective”下面的级联菜单项，可以打开视景，**如图2.17所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z8.png)
+
+**图2.17 “WindowPerspectiveOpen Perspective”的级联菜单项**
+
+**（4）Eclipse的工作界面**
+
+Eclipse程序的工作界面是一个窗口，它将菜单、工具、视图和编辑器组织在一起，如图2.18所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/z9.jpg)
+
+**图2.18 Eclipse的工作界面**
+
+其中的界面元素如下：
+
+1.菜单(Menu Bar)
+
+2.工具列(Tool Bar)
+
+3.快速视图(Fast View)
+
+4.包浏览器(Package Explorer)视图
+
+5.编辑器(Editor)视图
+
+6.快捷方式工具列(Shortcut Toolbar)
+
+7.大纲(Outline)视图
+
+8.任务(Tasks)视图和控制台(Console)视图
+
+
+
+### Eclipse的快捷键
+
+Eclipse的一些常用功能可以使用快捷键完成。
+
+开发Java程序时，使用快捷键会更方便。
+
+使用菜单“WindowPreferences”，打开“Preferences”对话框，找到【General】->【Keys】，窗口右边就会出现所有快捷键，如图2.19所示。
+
+你可以在这里查看哪个功能使用哪个快捷键。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/images/s1.png)
+
+**图2.19 Eclipse的“Preferences”对话框**
+
+有一些快捷键是常用的，如：
+
+**（1）一般**
+
+代码助手:Ctrl+Space（简体中文操作系统是Alt+/）
+
+快速修正：Ctrl+1
+
+单词补全：Alt+/
+
+**（2）定位**
+
+行末/行首：End/Home
+
+**（3）注释或取消注释**
+
+Control+/: 对一行注释或取消注释。对于多行也同样适用。
+
+**（4）导入类**
+
+ctrl+shift+o：为当前行中尚未引入的类自动添加Inport语句导入。
+
+**（5）重命名**
+
+重命名属性及方法在几年前还是个很麻烦的事，需要大量使用搜索及替换，以至于代码变得零零散散的。今天的Java IDE提供源码处理功能，Eclipse也是一样。现在，变量和方法的重命名变得十分简单，你会习惯于在每次出现更好替代名称的时候都做一次重命名。要使 用这个功能，将鼠标移动至属性名或方法名上，按下alt+shift+r，输入新名称并点击回车。就此完成。如果你重命名的是类中的一个属性，你可以点击alt+shift+r两次，这会呼叫出源码处理对话框，可以实现get及set方法的自动重命名。
+
+**（6）快速转换编辑器**
+
+这组快捷键将帮助你在打开的编辑器之间浏览。使用ctrl+page down或ctrl+page up可以浏览前后的选项卡，但是在很多文件打开的状态下，ctrl+e会更加有效率。
+
+**（7）创建一个新空白**
+
+Shift+enter在当前行之下创建一个空白行，与光标是否在行末无关。Ctrl+shift+enter则在当前行之前插入空白行。
+
+
+
+### Eclipse的快捷键
+
+**（1）下载eclipse的中文语言包**
+
+下载地址如下http://www.eclipse.org/babel/downloads.php
+
+下载对应的eclipse的中文语言包。
+
+**（2）解压缩该文件。**
+
+**（3）安装eclipse的中文插件包。**
+
+打开eclipse英文版，打开菜单“EclipseHelpInstall New Software…”，去安装eclipse的中文插件包。
+
+## **2.7 Eclipse中的Java程序调试**
+
+### 主题内容
+
+有时程序编译没有错误，但执行结果不是预期的结果，这时可能就是程序逻辑问题了。程序逻辑问题是不容易发现的，因为人的思维总是有“惯性”的，有时很难发现自己的逻辑错误。此时调试程序就有用了。你可以用调试工具调试程序，从而发现逻辑错误。
+
+Eclipse平台内置了一个Java 调试器。该调试器不仅提供诸如单步执行、设置断点、检查变量以及暂时挂起和恢复线程等标准调试功能，而且提供了代码片段编辑测试窗页面和远程调试两个特殊的功能。
+
+调试视图
+
+Eclipse有一个特殊的调试视图，使得开发人员能够管理工作台中程序的调试和运行。通过调试视图，可以管理和控制工作台中程序的运行或调试。通过设置断点、挂起线程、单步执行以及检查变量来控制程序的运行。
+
+**调试视图显示以下信息:**
+
+（1）被挂起的正在进行调试的线程的堆栈帧信息，所谓堆栈帧是程序运行时调用的方法以及它内部变量等信息。
+
+（2）程序中每个线程都作为一个节点。
+
+（3）正在运行的程序的进程。
+
+调试视图包括进程视图和控制台视图。进程视图显示正在运行以及最近被终止的进程，控制台视图允许开发者通过标准输入和输出流对正在运行的进程进行交互操作。
+
+调试方法
+
+Java 调试器采用了C/S结构，这使得它既可以调试本地运行的程序，也可以进行远程调试（调试网络上其他电脑的Java 程序）。
+
+本地调试是最常用的一类调试。代码编写和编译完成以后，就可以通过工作台的主菜单栏上的【运行→调试】来启动程序。按照这种方式启动程序，就能够在Java程序和调试器之间建立连接，以便使用断点、单步控制以及表达式求值来调试程序。
+
+建议在调试时尽量做到每行只有一条语句。因为如果一行有多条语句，部分调试器的功能无法使用。
+
+例如：如果同一行有多条语句，就无法设置断点或单步跳过，把源代码加入JAR文件。
+
+**1．挂起和恢复线程**
+
+调试开始后，开发人员可以将正在执行的线程挂起，以便查看该线程堆栈帧的信息，步骤如下：
+
+（1）在调试视图选择线程。
+
+（2）在调试视图的工具栏选择“挂起”按钮，线程将被挂起。调试视图显示该线程当前的调用堆栈（如图2.20所示），并且调试视图中的编辑器也会突出显示该堆栈帧对应的代码，这行代码就是线程被挂起那一刻程序运行到的地方。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/18.png)
+
+**图2.20 调用堆栈**
+
+线程挂起时会自动选择线程顶部的堆栈帧（即最近被调用的方法），变量视图将会显示堆栈帧中的变量以及它的值，复杂的变量可以被展开以便查看其成员的值。开发者也可以在调试视图的调用堆栈里选择一个方法调用，该方法的变量信息就会在变量视图显示出来。
+
+线程挂起时，将鼠标移到Java 编辑器里的某个变量之上，就会显示该变量的值。
+
+**线程既可以被挂起，也可以恢复执行。**
+
+（1）在调试视图选择线程或它的堆栈帧。
+
+（2）在调试视图的工具栏里点击“继续”按钮（或按F8），线程恢复执行。此时，调试视图不再显示它的堆栈帧，变量视图也会清除与其相关的信息，如图2.21所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/19.png)
+
+**图2.21 恢复线程**
+
+**2．单步执行程序**
+
+线程被挂起后，可以使用“单步控制”逐行执行程序。如果在这个过程中遇到断点（下一小节将详细讲述），那么将在断点处挂起并且终止单步执行。
+
+单步执行程序时有以下几种操作：
+
+（1）“单步跳过”。不进入调用的方法内部，而是在该方法结束后，下一个方法执行前挂起。这个功能可以通过调试视图工具栏的“跳过”按钮或F6功能键来实现。
+
+（2）“单步进入”。将会进入调用方法的内部。这个功能可以通过调试视图工具栏的“进入”按钮或F5功能键来实现。
+
+**3．查看和修改变量的值**
+
+线程被挂起后，可以检查变量以确定其值是否正确。
+
+有几种方法可以用来检查程序中的变量。对于简单的变量，只需要在Java 编辑器中将鼠标移到变量名上（不需单击）即可，这样会自动打开一个文本框并显示该变量的信息，包括它当前的值，如图2.22所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/20.png)
+
+**图2.22 简单变量的信息**
+
+这种方法对于简单的变量是很方便。但对于一些复杂变量，这种方法只会显示对象ID和它的类型，虽然这些信息也重要，但是它没有提供变量的值。与类型相关的任何信息（例如Javadoc注释），同样也会在弹出的文本框里显示出来，如图2.23所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/21.png)
+
+**Javadoc注释**
+
+如果要查看复杂变量的值，可以使用变量视图。变量视图显示当前范围内（即堆栈帧的上下文）的所有变量。缺省情况下，变量视图位于窗口的右上角，它与表达式视图和断点视图共享一个窗格，如图2.24所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/22.png)
+
+**图2.24 变量视图**
+
+使用变量视图还可以修改变量的值。选择某个变量，单击右键并在弹出的菜单选择【更改值】。对于复杂的变量，可以选择变量的一个特定成员进行修改。如图2.25所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/23.png)
+
+**图2.25 修改变量的值**
+
+
+
+### 断点
+
+当正在执行的程序线程遇到断点，它就被挂起了。断点视图和编辑器都会显示断点，可以通过断点视图启用或禁用断点。
+
+当程序运行到一个可用的断点时，它就会被挂起。可用的断点用一个蓝色的圆圈表示。一旦在虚拟机上载入了类并且安装了断点，可用的断点就会用蓝色的圆圈上加一个勾表示。不可用的断点不会导致线程挂起，它用一个白色的圆圈表示。断点在编辑器区域左边的垂直标尺和断点视图中显示，如图2.26所示。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/ss.png)
+
+**图2.26 显示断电**
+
+可以为程序的可执行的代码（即没有注释掉的代码）添加行断点。步骤如下：
+
+（1）在编辑器区域打开将要加入断点的文件。
+
+（2）在想要添加断点的代码的左方，即垂直标尺上单击右键，并在弹出的菜单里选择**【切换断点】**，如图2.27所示。还可以通过双击垂直标尺来添加断点。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/sa.png)
+
+**图2.27 设置断点时的弹出菜单**
+
+在有断点的那一行代码执行之前，线程就会挂起。调试器会自动选择被挂起的线程，并且将线程堆栈里的信息在调试视图里显示出来。而在调试透视图的编辑器中，设置断点的那一行代码会被突出显示。
+
+当不再需要某个断点时，可以很方便地将其删除，删除步骤如下：
+
+（1）在编辑器区域打开将要删除断点的文件。
+
+（2）在想要添加断点的那一行的左方，在垂直标尺上单击右键并在弹出的菜单里选择**【切换断点】**。也可以通过双击源代码旁边的垂直标尺来删除断点。
+
+如果在同一个地方经常添加或删除断点，可以启用或禁用该断点。启用一个断点后，程序线程会在这个断点挂起；禁用该断点后，线程就不会在该处挂起。
+
+
+
+## 2.8 拓展阅读
+
+
+
+### Netbeans大战Eclipse
+
+NetBeans由Sun公司（2009年被甲骨文收购）在2000年创立，它是开放源运动以及开发人员和客户社区的家园，旨在构建世界级的Java IDE。
+
+NetBeans当前可以在Solaris、Windows、Linux和Macintosh OS X平台上进行开发，并在SPL(Sun公用许可)范围内使用。虽然NetBeans带有更多的“官方”色彩，但Java程序员使用更多的集成开发工具是IBM的Eclipse。
+
+如果你是一个Java支持者，你一定不会陌生Netbeans，因为大家都是从Netbeans的爱恨交加中走过来的，初识Netbeans还是3.6版本，当时无论从界面还是运行上，真的不敢恭维，但是谁又能说Netbeans会停止它前进的脚步呢?由于开源脚步的加快，Borland提前宣布退出，给了Netbeans更多的机会，也让Netbeans在业界得到专业人士的赏识，但是他真的走出充当配角角色吗?真的像Netbeans高级宣传官所说的那样走出低谷了吗?
+
+
+
+### Netbeans拒绝与Eclipse合并
+
+随着开源的兴起，Jbuilder光辉不在，Netbeans的市场份额在今年上半年有了明显的增长，据国外权威调查机构显示，Eclipse 市场份额占45%，Netbeans占 30%，Jbuilder占15%，其它IDE占5%，从调查分析来看，Netbeans的市场占有率正在上升，原来三国鼎立的局面因为Jbuilder的退出，使Eclipse对决 Netbeans大战提前上演了，都说这是一场势均力敌的战争，倒不如说是两大软件巨头的撕杀，2006年初IBM就开始和Sun公司进行谈判，数月谈判结果给了IBM当头一棒，Sun公司拒绝加入IBM主导的开源项目Eclipse，在宣布放弃Eclipse同时，不久Sun表示，他们不再试图将Sun 发起的NetBeans.org开放源Java工具项目与Eclipse合并。
+
+Sun公司认为，加入Eclipse阵营需要打破两个组织之间的技术和组织差别，而这将对NetBeans和Eclipse项目现有的参与者造成不利影响。Sun公司开发平台集团副总裁RichGreen表示，“我们双方都确定我们不希望放弃现有项目”，“我们确定，合作社团相对于削减成本等问题更为重要。”
+
+Eclipse和NetBeans开放源项目目的是开发软件以允许不同的Java开发工具在单个编程应用中能够相互嵌和。比如，开发人员可以将一家公司提供的源代码管理工具与其他公司的代码编辑器综合在一起使用。
+
+Green称，双方起初讨论放弃NetBeans，但很快转而谈判寻求将两个开放源项目统一在一个单一实体下。理论上，将两个项目和并可以建立一个针对同一技术的更大社团，并确保两个项目不会建立不兼容的代码。但Green表示，如果重写各自的插件系统以及相关的工具平台需要双方花费很长时间和巨大开销。比如，Sun的商业开发工具建立在NetBeans的基础上，如果转而采用Eclipse标准则需要进行重大修改。
+
+Sun和IBM Eclipse未能走到一起，在两大开放源工具项目之间建立起一个鸿沟。Green表示，这样也为开发商提供了更多的选择。并且，Sun仍然希望将来与Eclipse重开谈判之门。
+
+相对与Sun的内敛相比，Eclipse基金会的执行理事Mike Milinkovich要自信得多，在谈到老竞争对手时，他说这本来就是一场没有悬念的战争，我们已经拥有了足够多的用户，而他们没有，很明显我们会赢得这场战争，我只能祝他们好运。
+
+关于两位当事人的观点我们的记者也采访了香港政府IT部门架构师Recher，他说这本身就是一场实力悬殊的竞争，虽然近期 Netbeans是在市场战略上取得一些佳绩，但不能说他们真正的赢得了这场胜利，他只不过是在分享Jbuilder抛弃的市场份额而已，Eclipse 并没有因为它的增加而减少，Sun公司一直在用一种狭隘的心态在抵制自已竞争对手，最近和IBM的谈判崩裂，以及Sun一直都没把OSGI列放JMX的标准中，就是很好的例证。
+
+
+
+### Eclipse未来之路
+
+同时Recher也谈到了Eclispe开发在3个方面占胜了Netbeans.
+
+1. 在技术上Eclipse是良好的OSGI框架实现(Equinox是OSGi R4 core framework的一个实现，而Eclipse IDE是基于Equinox项目开发的一个典型例子OSGI的好处基本就是面向组件开发，并提供一个十分好用的plugs-in框架，开发性强。况且 Eclipse本身就是一个RCP的容器---为未来RCP应用程序的将来提供不可缺少而且成熟的工具和容器。
+
+2. 在市场上Netbeans支持的项目和工具太少了，因为很多开源项目都提供了大量Eclipse的plugs-in组件，这些是其它IDE 工具无法比拟的， 现在的 IBM已经和Eclipse完全整合了(以前的WSAD还不能说完全，但IRAD6.0就已经很完全了)，同时IBM推出RSA(Rational Software Architect)的工具可以把Eclipse+UML+RUP+IRAD比较完美结合，至少我认为它是目前出来最好的工具了，整个RUP都可以涵盖，而且还是支持UML2.0。
+
+3. 在背景方面Eclispe的流行完全是IBM在它萌芽阶段进行资金赞助的产物，有了IBM这个蓝色巨人的支持，它的前途无可限量，但是也不能小看了Sun公司的这个冷面杀手，有Sun这个强有力的后盾，双方以后的竞争会很激烈的。
+
+其实对于Eclipse未来，我们国内的架构师们只是在应用的角度上来看得在这个问题，Mike Milinkovich在9月初的Eclipse 2006世界大会指出了Eclipse未来的发展和新技术走向，他告诉我们首先是围绕富客户端平台的继续增长和采用支持更多的语言。下个季度，我们计划在Eclipse内推出首版的PHP IDE项目，我们认为这是一个非常令人激动的项目。因为无论是对企业开发者还是Web开发者来说，PHP是一门非常重要的语言，因此使得Eclipse工具支持PHP是一件令我们激动的事情。
+
+
+
+### NetBeans未来走向
+
+在IDE开发工具竞争激烈的今天，Sun也逐步的调整了Netbeans市场战略，在今年JavaOne大会上，Netbeans高级宣传官 Tim Boudreau也谈到了Netbeans以后发展动向，他告诉我们，自从1998年以来，NetBeans并没有只为Java而工作。
+
+它也是C/C++工具的基础，Sun公司已经将它转用于Solaris很多年了，对它的支持正在进行扩展化和通用化，不再仅限于Solaris。NetBeans也是HP公司用于OpenVMS的IDE，支持COBOL， Fortran， C/C++和其它语言。例如在今年JavaOne大会上我们演示的对VB的支持—实际上是读取VB代码，编译成字节码，然后运行，有时会比它本应生成的本地代码运行还要快。因此，我们已经开始了这个项目，也会有围绕脚本方面的开发做更多的努力。NetBeans并不一定要局限于Java IDE平台—它对于Java已经有了很大地支持，那是人们首先要考虑的事情。但是就NetBeans目前的发展来看，它已经成为了一个语言无关的平台。
+
+正像我们早期提到的，重要的东西的寿命总是很长。一些人声称Java会在5或10年里死亡，我们都会迎来下一个大的事物。即使真是那样， NetBeans也一样可能会支持下一个事物的到来，但是对一个语言的寿命做假设的时候，有一件重事情要考虑，对于期望任何特殊的程序语言或范例的盛行周期日益变得更长是很实际的，这有两方面的原因。首先，我们在绘制人们如何考虑告诉计算机工作的方式上的蓝图方面正越来越好，其次，一个语言统治的时间越长，它的代码就会越多，因此移植的代价也就越大。于是你不得不紧跟一些事情，这些事情会强迫变化中的语言很丰富多彩。
+
+现在有很多有关脚本语言的谈论，但是我期待在主流编程语言中的下一个重大变化是让直觉上类似多核芯片的并行方式成为规范标准。我确信在未来的时间里这些目标将会成我们考虑的主流。
+
+从上述的采访中我们明显看到了开发公司的架构师对于Eclipse的钟爱程度，Eclipse已经深入人心，Eclipse的强大是显而易见，记得Ruby刚刚在网上火爆的时候，Eclipse就迅速作出反应，推出了支持Ruby开发插件，可是我们在反观 Netbeas在5.5的版本还没有这样的计划，Java之父Gosling曾说过未来的Netbeans不将是纯粹的Java开发工具，它要涉及各个方面，以后也会支持Ruby开发，可是在他说这些话的时候，Eclipse已经在前进的路上了，这难免令所有支持者感到失望，未来的日子，谁将主宰我们都拭目以待。
+
+2.9 动手项目
+
+
+
+## 动手项目2-1：了解其它Java集成开发环境
+
+**所需时间：**30分钟。
+
+**项目目标：**了解其它Java集成开发环境。
+
+**过程描述：**使用搜索引擎寻找资源，了解其它Java集成开发环境。
+
+（1）用浏览器登录到某个搜索引擎。
+
+（2）在搜索引擎中输入关键字“Java集成开发环境”，并提交。
+
+（3）在搜索引擎返回的结果列表中寻找不同的Java集成开发环境，了解其特点。
+
+（4）把你所了解到的各种Java集成开发环境的功能和特点写个帖子法到课程论坛中。
+
+2.10 小结
+
+
+
+## 小结
+
+JDK 的全称是Java SE Development Kit，即Java标准版开发包，是Java官网提供的一个用于开发Java应用程序的开发包。学习开发Java程序是一般用这个官方的JDK。
+
+除了下载和安装JDK外，开发Java程序时，通常也下载Java SE Documentation。开发Java程序用的几乎所有的知识在它里面全部都有。程序员一般把Java SE Documentation作为“编程手册”使用。
+
+Java程序开发者把它作为Eclipse 当作 Java 集成开发环境（IDE）来使用。
+
+Eclipse是使用Java 语言开发的，所以Eclipse可运行在任何的Java运行时环境（jre）之上。进一步，安装Eclipse的时候需要先安装一个Java运行时环境（Java运行时环境由Java虚拟机和Java API组成），以便使得Eclipse运行在此Java运行时环境之上。安装JDK的时候就同时安装了Java运行时环境。
+
+工作台是指桌面编程环境，工作台的外在表现为“工作台”窗口。每个工作台窗口包括至少一个透视图，透视图又包含视图和编辑器，并且控制在菜单栏和工具栏显示的内容。多个工作台窗口可以同时存在。
+
+# 第3章
