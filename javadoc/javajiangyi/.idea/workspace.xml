@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8caa03a-c710-41f8-8d55-0548abe26f78" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +35,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="2CFyb7R8PbXsvexOaG30NRW00Uj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -46,21 +48,34 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Develop/Git/bin/git.exe" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunManager" selected="Application.ShortCircuit">
-    <configuration name="Bool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme4modifydata.Bool" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.SwitchTest">
+    <configuration name="Answer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.Answer" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme4modifydata.*" />
+          <option name="PATTERN" value="theme5certainConditions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -68,12 +83,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Mix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme4modifydata.Mix" />
+    <configuration name="IfElseMore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.IfElseMore" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme4modifydata.*" />
+          <option name="PATTERN" value="theme5certainConditions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,12 +96,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RelationalOp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme4modifydata.RelationalOp" />
+    <configuration name="IfTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.IfTest2" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme4modifydata.*" />
+          <option name="PATTERN" value="theme5certainConditions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShortCircuit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme4modifydata.ShortCircuit" />
+    <configuration name="SwitchTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.SwitchTest" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme4modifydata.*" />
+          <option name="PATTERN" value="theme5certainConditions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +122,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Stock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme4modifydata.Stock" />
+    <configuration name="logicTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.logicTest" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme4modifydata.*" />
+          <option name="PATTERN" value="theme5certainConditions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ShortCircuit" />
-        <item itemvalue="Application.Bool" />
-        <item itemvalue="Application.RelationalOp" />
-        <item itemvalue="Application.Mix" />
-        <item itemvalue="Application.Stock" />
+        <item itemvalue="Application.SwitchTest" />
+        <item itemvalue="Application.IfElseMore" />
+        <item itemvalue="Application.logicTest" />
+        <item itemvalue="Application.Answer" />
+        <item itemvalue="Application.IfTest2" />
       </list>
     </recent_temporary>
   </component>
@@ -142,18 +157,21 @@
       <updated>1658412695515</updated>
       <workItem from="1658412699920" duration="1404000" />
       <workItem from="1658455222881" duration="6459000" />
+      <workItem from="1658498859586" duration="5599000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -176,5 +194,19 @@
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
     <state width="1750" height="301" key="GridCell.Tab.0.right/0.25.1792.1095@0.25.1792.1095" timestamp="1658490320777" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/theme5certainConditions/logicTest.java</url>
+          <line>10</line>
+          <properties class="theme5certainConditions.logicTest" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
