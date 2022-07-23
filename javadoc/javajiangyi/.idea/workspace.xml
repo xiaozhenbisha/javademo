@@ -19,7 +19,33 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8caa03a-c710-41f8-8d55-0548abe26f78" name="Default Changelist" comment="" />
+    <list default="true" id="d8caa03a-c710-41f8-8d55-0548abe26f78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/theme5certainConditions/Sanyuan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme5certainConditions/VowelsAndConsonants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/BreakTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/ForloopTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/Jiujiu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/LabeledWhile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/LoopForever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/NestingLoopTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/NestingLoopTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/Triple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/WhileAndDoWhile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/WhileLoopForever.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme6loop/WhileTets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme7array/BubbleSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme7array/Jiujiu2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme7array/LetterCount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme7array/System11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme7array/VarArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme7array/intarray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme8objectword/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme8objectword/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme8objectword/rectangleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme8objectword/shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../高级语言程序设计讲义.md" beforeDir="false" afterPath="$PROJECT_DIR$/../高级语言程序设计讲义.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +55,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -69,13 +96,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SwitchTest">
-    <configuration name="Answer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.Answer" />
+  <component name="RunManager" selected="Application.User">
+    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme7array.BubbleSort" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme5certainConditions.*" />
+          <option name="PATTERN" value="theme7array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IfElseMore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.IfElseMore" />
+    <configuration name="Jiujiu2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme7array.Jiujiu2" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme5certainConditions.*" />
+          <option name="PATTERN" value="theme7array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IfTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.IfTest2" />
+    <configuration name="LetterCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme7array.LetterCount" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme5certainConditions.*" />
+          <option name="PATTERN" value="theme7array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,12 +136,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SwitchTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.SwitchTest" />
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme8objectword.User" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme5certainConditions.*" />
+          <option name="PATTERN" value="theme8objectword.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,12 +149,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="logicTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme5certainConditions.logicTest" />
+    <configuration name="intarray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme7array.intarray" />
       <module name="javajiangyi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="theme5certainConditions.*" />
+          <option name="PATTERN" value="theme7array.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SwitchTest" />
-        <item itemvalue="Application.IfElseMore" />
-        <item itemvalue="Application.logicTest" />
-        <item itemvalue="Application.Answer" />
-        <item itemvalue="Application.IfTest2" />
+        <item itemvalue="Application.User" />
+        <item itemvalue="Application.BubbleSort" />
+        <item itemvalue="Application.LetterCount" />
+        <item itemvalue="Application.Jiujiu2" />
+        <item itemvalue="Application.intarray" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +185,7 @@
       <workItem from="1658412699920" duration="1404000" />
       <workItem from="1658455222881" duration="6459000" />
       <workItem from="1658498859586" duration="5599000" />
+      <workItem from="1658532961483" duration="8184000" />
     </task>
     <servers />
   </component>
