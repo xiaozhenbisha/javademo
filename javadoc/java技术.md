@@ -1437,4 +1437,388 @@ Eclipse是使用Java 语言开发的，所以Eclipse可运行在任何的Java运
 
 工作台是指桌面编程环境，工作台的外在表现为“工作台”窗口。每个工作台窗口包括至少一个透视图，透视图又包含视图和编辑器，并且控制在菜单栏和工具栏显示的内容。多个工作台窗口可以同时存在。
 
-# 第3章
+# 第3章 包
+
+## **3.1 java中的包**
+
+### 主题内容
+
+一个具有实际功能的Java程序中往往会会包含很多类和接口，如果你直接把这类和接口都放在一起，那将是混乱和不便于管理的。你可以使用“包”把一些类和接口分门别类地组织在一起。也就是说，你可以把一组相近功能的类和接口放到一个“包”中。
+
+在Java中，包的概念和其它编程语言中函数库的概念是相同的，也称为类库。包把一组类和接口封装在一个包内，为管理和使用大量的类和接口提供了方便，同时也有利于这些类和接口的安全（包内代码通过访问标志可以互相协作，而这些标志对外部代码是不可用的）。另外，程序包还可以有效地管理类名空间，位于不同包中的类即使同名也不会冲突。
+
+当然，包机制并不能完全解决名字冲突的问题，因为尽管可以控制同一个项目的多个包具有不同的名字，但两个不同的项目的不同包可能为恰巧取了相同的名字，特别是不同公司的不同项目中是有可能发生这一情况的。这类问题只能通过“规定”来解决。Java官方标准规定使用程序开发组织的反向Internet域名作为包名的前缀，例如，如果Acem公司的域名是acem.com，它就可以使用com.acem作为本公司开发的Java项目的报名的前缀，这样就可以用类似的com.acme.tools的包名。
+
+要点：包的概念
+
+为了更好地组织类，Java提供了包机制。包有时也称类库。
+
+把功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用。
+
+如同文件夹一样，包也采用了树形目录的存储方式。同一个包中的类名字是不同的，不同的包中的类的名字是可以相同的，当同时调用两个不同包中相同类名的类时，应该加上包名加以区别。因此，包可以避免名字冲突。
+
+包也限定了访问权限，拥有包访问权限的类才能访问某个包中的类。
+
+Java使用包（package）这种机制是为了防止命名冲突，访问控制，提供搜索和定位类（class）、接口、枚举（enumerations）和注释（annotation）等。
+
+Java的包本身没有子包的概念，所有包都是并列的关系，没有谁包含谁的问题。比如:org.dominoo.action和org.dominoo.action.asl之间绝对没有包与子包的关系。它们是各自独立的包，各自拥有自己的了类和接口的集合。在org.dominoo.action.asl的某个java文件里，如果想引用org.dominoo.action里的某个类和接口，则必须使用import引入 org.dominoo.action。
+
+为了避免不同项目之间包名的冲突，Java官方标准规定使用程序开发组织的反向Internet域名作为包名的前缀。
+
+### **3.2包与文件系统目录结构的对应关系**
+
+### 主题内容
+
+包也采用了树形目录的存储方式，包中的类和接口与文件系统的目录结构存在对应关系。也就是说包所组织的类文件的逻辑结构与物理存放位置是一致的。
+
+
+
+### 活动：观看关于Java基础类库目录结构的视频
+
+下面的视频分析了Java基础类库目录结构，从而让你认识包与文件系统目录结构的对应关系。请观看下面的视频。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/vid3-1.png)
+
+**视频3-1：Java基础类库目录结构**
+
+\1. 到JAVA_HOME\ jre1.8.0_92\lib下找到rt.jar（rt.jar是Java的基础类库的归档文件），把它复制到一个临时文件夹下，如C:\tmp。
+
+\2. 使用解压缩软件WinRAR将rt.jar解压缩。注意，解压缩的时候选“解压到当前文件夹”，而不是“解压到rt”下，否则就等于多加了一层rt\。
+
+\3. 使用资源管理器，打开目录结构，查看Java系统类的.class文件，如Java\lang\ System.class， java\io\FileInputStream.class等。
+
+\4. 最后陈述一下下面的要点。
+
+要点：包的命名规则以及包与目录的对应关系
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) Java约定包名字内的所有字母都应小写，甚至那些中间单词亦要如此,如mypackage而不是myPackage。这样的命名约定是为了避免包名与类、接口名字的冲突。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 包名具有层次结构，如Java的核心语言包名字是java.lang,Java用于图形用户界面事件处理的包名是java.awt.event。在包名中，用点(.)分隔了包名的层次结构。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 包名的层次结构与物理目录存在对应关系，如java.lang对应.\java\lang，java.awt.event对应.\java\awt\event。
+
+## **3.3 创建包**
+
+### 主题内容
+
+Java系统中已经包含了设计者编写的大量系统程序包，你学习Java的任务之一就是了解和使用系统程序包。除此之外，你还可以声明和使用自己的程序包，这为大型程序的开发提供了方便。
+
+
+
+### 活动：观看创建包的视频
+
+点击折叠
+
+下面的视频演示了创建包以及编译程序的方法。请观看下面的视频。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/vid3-2.png)
+
+**视频3-2：创建包以及编译程序**
+
+**1.在工作目录下创建子目录pack1。**
+
+**2.在pack1目录下创建如下两个文件：**
+
+文件一：
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.3.html?node=858292446&detailRecordId=1314589011&studyrecordId=1225624963&sectionRecordId=1229924109#)
+
+```
+package` `pack1;``  ``class` `CCircle  ``// 将CCircle类纳入package pack1当中``     ``{``       ``public` `void` `show(){ ``         ``System.out.println(``"show() method called"``);``       ``}``     ``}
+```
+
+文件二：
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.3.html?node=858292446&detailRecordId=1314589011&studyrecordId=1225624963&sectionRecordId=1229924109#)
+
+```
+package` `pack1;``public` `class` `PackDemo  ``// 将PackDemo类纳入package pack1当中`` ``{``   ``public` `static` `void` `main(String args[]){ ``      ``CCircle cir=``new` `CCircle();``      ``cir.show();``   ``}`` ``}
+```
+
+**3.编译这两个文件。**
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/q.png)
+
+**4.运行程序。**
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/w.png)
+
+活动的解析：本视频中创建的包
+
+（1）本视频中创建了一个包pack1，包中包含了两个类CCircle和PackDemo。
+
+（2）CCircle和PackDemo在同一个包中，所以在PackDemo中可以直接访问Circle。
+
+（3）由于包pack1的物理目录就是在当前工作目录D:\JavaPrograms下面，而此前设置的CLASSPATH的类搜索路径中包括当前目录，因此Java解释器可以找到包中的类，即直接用java pack1.PackDemo可运行程序。
+
+（4）编译器javac后面是目录和文件名，而解释器java后面是包名和包中的类名。目录和文件名之间的分隔符是反斜杠，而包名和包中的类名之间的分隔符则是圆点（.）。
+
+要点： 创建包的方法和包的保存
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 创建package的时候，你需要为这个package取一个合适的名字。之后，如果其他的一个源文件包含了这个包提供的类、接口、枚举或者注释类型的时候，都必须将这个package的声明放在这个源文件的开头。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 包声明应该在源文件的第一行，每个源文件只能有一个包声明，这个文件中的每个类型都应用于它。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 如果一个源文件中没有使用包声明，那么其中的类，函数，枚举，注释等将被放在一个无名的包（unnamed package）中。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) package语句
+
+**包语句的语法格式为：**
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.3.html?node=858292446&detailRecordId=1314589011&studyrecordId=1225624963&sectionRecordId=1229924109#)
+
+```
+package` `pkg1[．pkg2[．pkg3…]];
+```
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 示例
+
+**例如,一个Something.java 文件它的内容**
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.3.html?node=858292446&detailRecordId=1314589011&studyrecordId=1225624963&sectionRecordId=1229924109#)
+
+```
+package` `net.java.util``  ``public` `class` `Something{``     ``...``  ``}
+```
+
+那么它的路径应该是 net/java/util/Something.java 这样保存的。 package(包)的作用是把不同的java程序分类保存，更方便的被其他java程序调用。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 开发者可以自己把一组类和接口等打包，并定义自己的package。而且在实际开发中这样做是值得提倡的，当你自己完成类的实现之后，将相关的类分组，可以让其他的编程者更容易地确定哪些类、接口、枚举和注释等是相关的。
+
+## **3.4访问包中的类**
+
+### 主题内容
+
+同一个包中的类可以直接访问，不同包中的类需要特定的方式才能访问。
+
+
+
+### 活动：观看访问包中的类的视频
+
+下面的视频演示了访问包中的类的方法。请观看下面的视频。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/vid3-3.png)
+
+**视频3-3：访问包中的类**
+
+**1.在工作目录下创建子目录pack1。**
+
+**2.在pack1目录下创建如下文件：**
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.4.html?node=858292447&detailRecordId=1314589012&studyrecordId=1225624963&sectionRecordId=1229924134#)
+
+```
+public` `class` `PackDemo1  ``// PackDemo1没有在包pack1当中`` ``{``    ``public` `static` `void` `main(String args[])``   ``{``      ``CCircle cir=``new` `CCircle(); ``      ``cir.show();``   ``}`` ``}
+```
+
+**3.编译此文件。**错误提示：找不到CCircle这个符号。编译器不知道它是个什么东西。是因为PackDemo1和CCircle没在同一个包中，不能直接访问，所以编译器不知道CCircle是什么东西。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/z.png)
+
+**4.修改程序如下：**
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.4.html?node=858292447&detailRecordId=1314589012&studyrecordId=1225624963&sectionRecordId=1229924134#)
+
+```
+import` `pack1.Circle;``    ``public` `class` `PackDemo1  ``// PackDemo1没有在包pack1当中``    ``{``      ``public` `static` `void` `main(String args[])``       ``{``          ``CCircle cir=``new` `CCircle();``          ``cir.show();``       ``}``    ``}
+```
+
+**5.再编译。**此时可以看到，编译器能够找到CCircle这个类的，但是由于该类不是公共的，所以还不能从外部访问。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/css_imgs/x.png)
+
+**6.把pack1.CCircle改成public的，**让它能被外部访问，然后重新编译CCircle.java。
+
+**7.再编译PackDemo1.java。**通过。
+
+**8.运行程序。**正确。
+
+活动的解析：访问包中的类的方法
+
+（1）同一包中的类可以直接访问，不同包中的类不同直接访问。
+
+（2）要让包中的类能够被外部访问，那么该类要声明为public的。
+
+（3）访问其它包中的类的方法之一是使用import语句将要访问的类引入到当前程序中来。
+
+要点： 访问在不同包中的类的两种方法
+
+（1）在当前文件中使用如下的格式来引用另外一个程序包中的类
+
+被访问的package的名称.被访问的类名称
+
+（2）把被访问的程序包导入到当前文件中。格式如下：
+
+import package1[.package2…].(classname|*);
+
+例如语句：import java.awt.Graphics;
+
+import java.applet.*;
+
+import pack1.CCircle;
+
+其中，星号（*）表示引入该包中的所有类和接口。
+
+## **3.5 在Eclipse新建类时直接指定到它包中**
+
+### 主题内容
+
+直接使用JDK开发Java程序时，创建包是比较麻烦的。你得先创建相应的物理目录，然后再相应目录中创建源程序文件，然后再编译。而使用Eclipse创建包就轻松多了，很多工作Eclipse都会替你做了。
+
+
+
+### 活动：观看在Eclipse创建包并创建类的视频
+
+下面的视频演示了在Eclipse创建包并创建类的方法。请观看下面的视频。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/vid3-4.png)
+
+**视频3-4：在Eclipse创建包并创建类**
+
+1.启动Eclipse。
+
+2.在项目Prj0中创建类CCircle。在“New Java Class”对话框中指定package为com.buptnu，类名为CCircle，Modifiers指定为public。
+
+3.在Java编辑器中为类CCircle添加show()方法并保存。
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.5.html?node=858292671&detailRecordId=1314589013&studyrecordId=1225624963&sectionRecordId=1229924113#)
+
+```
+public` `void` `show(){ ` `    ``System.out.println(``"show() method called"``);` `}
+```
+
+4.到D:\Java Programs\Prj0\src\com\buptnu下面查看自动创建的目录和源文件；到D:\Java Programs\Prj0\bin\com\buptnu下面查看自动创建的目录和.class文件。
+
+5.在default包中创建类PackDemo。在“New Java Class”对话框中清除com.buptnu，恢复default，在name中输入PackDemo1，Modifiers指定为public，指定自动生成main()方法。
+
+6.在Java编辑器中为类CCircle添加语句。
+
+**CCircle cir=new CCircle();**
+
+**cir.show();**
+
+会看到CCircle cir=new CCircle();所在行的实时错误提示。鼠标放到最左边的红色小叉上看错误原因——不能将CCircle解释为某个类型。将鼠标放到CCircle上，会看到Java编辑器提示的修改方法，选中“import…”，可以看到Java编辑器自动添加了import语句。此处再次体会到使用Eclipse的Java编辑器编辑比用文本编辑器编辑Java源程序的好处，它会自动提示修改方法并为你自动添加需要的代码。
+
+然后保存。
+
+7.剩下的就是运行程序。正确。
+
+活动的解析：本视频中创建的包
+
+（1）Eclipse中直接为类指定包就成了，包的物理目录Eclipse会替开发者去创建。
+
+（2）Eclipse有错误提示和错误修改提示功能，用它比较较方便。
+
+（3）后面的程序开发将使用Eclipse，而不再用初级的JDK。
+
+## 3.6 动手项目
+
+### 动手项目3-1：使用Eclipse创建包和类
+
+所需时间：30分钟。
+
+项目目标：使用Eclipse创建包和类。
+
+过程描述：使用Eclipse创建包和类。
+
+（1）启动Eclipse。
+
+（2）在项目Prj0中创建一个接口，如下：
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.6.html?node=858292676&detailRecordId=1314589014&studyrecordId=1225624963&sectionRecordId=1229924112#)
+
+```
+/*文件名：Animal.java*/``package` `animals;` `public` `interface` `Animal{``  ``public` `void` `eat();``  ``public` `void` `travel();``}
+```
+
+把此接口指定到包com.buptnu.animals中
+
+（3）接下来，在同一个包中加入该接口的实现：
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.6.html?node=858292676&detailRecordId=1314589014&studyrecordId=1225624963&sectionRecordId=1229924112#)
+
+```
+package` `animals;``/*文件名： MammalInt.java*/` `public` `class` `MammalInt ``implements` `Animal{``  ``public` `void` `eat(){``    ``System.out.println(``"Mammal eats"``);``  ``}``  ``public` `void` `travel(){``    ``System.out.println(``"Mammal travels"``);``  ``}``  ``public` `int` `noOfLegs(){``    ``return` `0``;``  ``}``}
+```
+
+（4）在default包中创建主类AnimalApp，如下：
+
+[?](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/java3.6.html?node=858292676&detailRecordId=1314589014&studyrecordId=1225624963&sectionRecordId=1229924112#)
+
+```
+import` `com.buptnu.animals.MammalInt;` `public` `class` `AnimalApp{` `  ``public` `static` `void` `main(String[] args){``     ``//TODO Auto-generated method stub``     ``MammalInt m = ``new` `MammalInt();``     ``m.eat();``     ``m.travel();``  ``}``}
+```
+
+（5）运行程序。
+
+（6）使用资源管理器观察源文件目录结构和字节码文件目录结构。
+
+
+
+## **3.7 小结**
+
+### 主体内容
+
+为了更好地组织类，Java提供了包机制。包有时也称类库。
+
+把功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用。
+
+如同文件夹一样，包也采用了树形目录的存储方式。同一个包中的类名字是不同的，不同的包中的类的名字是可以相同的，当同时调用两个不同包中相同类名的类时，应该加上包名加以区别。因此，包可以避免名字冲突。
+
+包也限定了访问权限，拥有包访问权限的类才能访问某个包中的类。
+
+Java使用包（package）这种机制是为了防止命名冲突，访问控制，提供搜索和定位类（class）、接口、枚举（enumerations）和注释（annotation）等。
+
+Java的包本身没有子包的概念，所有包都是并列的关系，没有谁包含谁的问题。
+
+为了避免不同项目之间包名的冲突，Java官方标准规定使用程序开发组织的反向Internet域名作为包名的前缀。
+
+package语句的语法格式为：
+
+package pkg1[．pkg2[．pkg3…]];
+
+import语句的语法格式为：
+
+import package1[.package2…].(classname|*);
+
+不使用import语句访问在不同包中类的方法
+
+被访问的package的名称.被访问的类名称
+
+Eclipse可以直接把新建的类指定到包中，不管该包是否存在。如果不存在，Eclipse的Java编辑器会自动地去创建包，然后把类纳入包中。
+
+## **3.8 思考题**
+
+### 主体内容
+
+**1.什么是包？它的主要作用是什么？**【隐藏】
+
+**答：**包是Java提供的一种组织类的机制，有时也称为类库。这种机制功能相似或相关的类或接口组织在同一个包中，方便类的查找和使用。
+
+Java使用包（package）这种机制是为了防止命名冲突，访问控制，提供搜索和定位类（class）、接口、枚举（enumerations）和注释（annotation）等。
+
+**2.包的命名规则以及包与目录的对应关系是怎样的？**【隐藏】
+
+**答：**![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) Java约定包名字内的所有字母都应小写，甚至那些中间单词亦要如此，如mypackage而不是myPackage。这样的命名约定是为了避免包名与类、接口名字的冲突。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 包名具有层次结构，如Java的核心语言包名字是java.lang，Java用于图形用户界面事件处理的包名是java.awt.event。在包名中，用点（.）分隔了包名的层次结构。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 包名的层次结构与物理目录存在对应关系，如java.lang对应.\java\lang，java.awt.event对应.\java\awt\event。
+
+![img](http://jx2.buptnu.com.cn/hello/resource/course/d3de68c9-0ff8-4c73-90bc-d5b59d0f9a93/img/java3_24.png) 为了避免不同项目之间包名的冲突，Java官方标准规定使用程序开发组织的反向Internet域名作为包名的前缀。
+
+**3.访问在不同包中的类的方法有哪些？**【隐藏】
+
+**答：**有两种办法可以访问在不同程序包中的类。
+
+（1）在当前文件中使用如下的格式来引用另外一个程序包中的类
+
+被访问的package的名称.被访问的类名称
+
+（2）把被访问的程序包导入到当前文件中。格式如下：
+
+import package名称.类名
+
+例如语句：import java.awt.Graphics;
+
+import java.applet.*;
