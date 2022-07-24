@@ -20,32 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8caa03a-c710-41f8-8d55-0548abe26f78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/C.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/Cab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/Shapes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/Triangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme8objectworld/Balloon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme8objectworld/Box.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme8objectworld/Rectangle1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme8objectworld/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/A1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/Applet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/Employee2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/Shape1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/Shape2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/theme9objectdeep/c5_5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/shape/shapeCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme10interfaceandpackage/shape/shapeSquare.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javajiangyi/theme8objectword/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javajiangyi/theme8objectword/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme8objectword/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme8objectworld/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme8objectword/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme8objectworld/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme8objectword/rectangleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme8objectworld/rectangleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme8objectword/shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme9objectdeep/shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../高级语言程序设计讲义.md" beforeDir="false" afterPath="$PROJECT_DIR$/../高级语言程序设计讲义.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AbstractClassDemo">
+  <component name="RunManager" selected="Application.shapeCircle">
     <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="theme8objectworld.A" />
       <module name="javajiangyi" />
@@ -137,19 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Balloon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="theme8objectworld.Balloon" />
-      <module name="javajiangyi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="theme9objectdeep.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="c5_5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="theme9objectdeep.c5_5" />
       <module name="javajiangyi" />
@@ -163,13 +127,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="shapeCircle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="theme10interfaceandpackage.shape.shapeCircle" />
+      <module name="javajiangyi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="theme10interfaceandpackage.shape.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.shapeCircle" />
         <item itemvalue="Application.AbstractClassDemo" />
         <item itemvalue="Application.c5_5" />
         <item itemvalue="Application.B1" />
         <item itemvalue="Application.A" />
-        <item itemvalue="Application.Balloon" />
       </list>
     </recent_temporary>
   </component>
