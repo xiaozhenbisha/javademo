@@ -1,8 +1,11 @@
 package com.java.extendstest;
 
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 
 public class CustomerViewTest {
+
     @Before
     public void before(){
         System.out.println("---------测试用例执行前---------");
@@ -23,3 +26,4 @@ public class CustomerViewTest {
         System.out.println("----------测试用例执行后-----------");
     }
 }
+
