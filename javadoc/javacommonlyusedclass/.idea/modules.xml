@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Collection/Collection.iml" filepath="$PROJECT_DIR$/Collection/Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/FamilyAccount/FamilyAccount.iml" filepath="$PROJECT_DIR$/FamilyAccount/FamilyAccount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TeamSchedule/TeamSchedule.iml" filepath="$PROJECT_DIR$/TeamSchedule/TeamSchedule.iml" />
       <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
       <module fileurl="file://$PROJECT_DIR$/javacommonlyusedclass.iml" filepath="$PROJECT_DIR$/javacommonlyusedclass.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
