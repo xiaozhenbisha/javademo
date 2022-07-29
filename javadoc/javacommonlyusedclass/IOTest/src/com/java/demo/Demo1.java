@@ -128,7 +128,7 @@ public class Demo1 {
 
         //delete   删除目录   只能删除空目录(删除不了又内容的目录)
         //如果非要删除非空目录？(进行递归删除)   下午先讲递归，然后在讲递归删除
-        File file1=new File("d:/iotest2");
+        File file1=new File("/Users/wangzhennan/Desktop/javademo/javadoc/testio");
         if(file1.exists()){
             file1.delete();
             System.out.println("success");
@@ -157,8 +157,8 @@ public class Demo1 {
      */
     @Test
     public void test3(){
-        File file=new File("d:/iotest/java_GBK.txt");
-        File file1=new File("../day19_IO/src/test.properties");
+        File file=new File("/Users/wangzhennan/Desktop/javademo/javadoc/testio/java_GBK.txt");
+        File file1=new File("/Users/wangzhennan/Desktop/javademo/javadoc/javacommonlyusedclass/IOtest/src/test.properties");
         System.out.println("文件是否存在："+file.exists());
         System.out.println("file是否是目录："+file.isDirectory());//如果不存在返回值是false
         System.out.println("file是否是文件："+file.isFile());//如果不存在返回值是false
@@ -176,8 +176,8 @@ public class Demo1 {
      */
     @Test
     public void test2(){//不能手动输入(main方法就可以)  不能采用相对路径(main方法就可以)
-        File file=new File("d:/iotest/java_GBK.txt");
-        File file1=new File("../day19_IO/src/test.properties");
+        File file=new File("/Users/wangzhennan/Desktop/javademo/javadoc/testio/java_GBK.txt");
+        File file1=new File("../IOtest/src/test.properties");
         System.out.println("路径："+file.getPath());
         System.out.println("获得绝对路径："+file1.getAbsolutePath());
         //D:\workspace\atguigu\bigdata0523\day19_IO\.\day19_IO\src\test.properties
@@ -198,7 +198,7 @@ public class Demo1 {
      */
     @Test
     public void test1(){
-        File file=new File("d:/iotest/java_GBK.txt");
+        File file=new File("d:/iotest/java_GBK.rtf");
         File file1=new File("./day19_IO/src/test.properties");
         System.out.println("获得文件名称："+file.getName());
         System.out.println("获得文件的长度："+file.length());//文件内容的字节数
@@ -210,21 +210,21 @@ public class Demo1 {
     public static void main(String[] args) {
         //1. 创建一个文件对象(File类的构造器)   D:\iotest\java.txt   D:\iotest
         // 为什么路径是错误的执行的时候不报错？ 因为有新建的功能
-        File file=new File("D:\\iotest\\java.txt");//通过绝对路径创建的File对象
+        File file=new File("/Users/wangzhennan/Desktop/javademo/javadoc/testio/java.rtf");//通过绝对路径创建的File对象
         System.out.println(file.exists());//判断file是否存在
         //通过相对路径在创建一个File对象
-        File file1=new File("./day19_IO/src/test.properties");
+        File file1=new File("./IOtest/src/test.properties");
         System.out.println(file1.exists());
         System.out.println("-------------------------------------");
 
-        File parent=new File("d:/iotest");//parent指向的是一个目录
+        File parent=new File("/Users/wangzhennan/Desktop/javademo/javadoc/testio");//parent指向的是一个目录
         System.out.println("目录是否存在："+parent.exists());
         //parent目录下是否存在一个java.txt文件
         //1. 新建一个File对象指向parent下的java.txt
         File javaFile=new File(parent,"java1.txt");
         System.out.println("java.txt是否存在"+javaFile.exists());
 
-        String parent1="d:/iotest";//可能是外界传进来的
+        String parent1="/Users/wangzhennan/Desktop/javademo/javadoc/testio/";//可能是外界传进来的
         File file2 = new File(parent1,"java.txt");
         System.out.println("file2是否存在："+file2.exists());
 
