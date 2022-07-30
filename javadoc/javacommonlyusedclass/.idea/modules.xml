@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/Iotest/Iotest.iml" filepath="$PROJECT_DIR$/Iotest/Iotest.iml" />
       <module fileurl="file://$PROJECT_DIR$/TeamSchedule/TeamSchedule.iml" filepath="$PROJECT_DIR$/TeamSchedule/TeamSchedule.iml" />
       <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/creatthread/creatthread.iml" filepath="$PROJECT_DIR$/creatthread/creatthread.iml" />
       <module fileurl="file://$PROJECT_DIR$/javacommonlyusedclass.iml" filepath="$PROJECT_DIR$/javacommonlyusedclass.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
     </modules>
