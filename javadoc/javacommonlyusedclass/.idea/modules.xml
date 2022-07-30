@@ -9,8 +9,12 @@
       <module fileurl="file://$PROJECT_DIR$/TeamSchedule/TeamSchedule.iml" filepath="$PROJECT_DIR$/TeamSchedule/TeamSchedule.iml" />
       <module fileurl="file://$PROJECT_DIR$/array/array.iml" filepath="$PROJECT_DIR$/array/array.iml" />
       <module fileurl="file://$PROJECT_DIR$/creatthread/creatthread.iml" filepath="$PROJECT_DIR$/creatthread/creatthread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design/design.iml" filepath="$PROJECT_DIR$/design/design.iml" />
       <module fileurl="file://$PROJECT_DIR$/javacommonlyusedclass.iml" filepath="$PROJECT_DIR$/javacommonlyusedclass.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/reflect/reflect.iml" filepath="$PROJECT_DIR$/reflect/reflect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/socket/socket.iml" filepath="$PROJECT_DIR$/socket/socket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/threadmethod/threadmethod.iml" filepath="$PROJECT_DIR$/threadmethod/threadmethod.iml" />
       <module fileurl="file://$PROJECT_DIR$/threadsecurity/threadsecurity.iml" filepath="$PROJECT_DIR$/threadsecurity/threadsecurity.iml" />
     </modules>
   </component>
