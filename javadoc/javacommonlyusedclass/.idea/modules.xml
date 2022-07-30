@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/creatthread/creatthread.iml" filepath="$PROJECT_DIR$/creatthread/creatthread.iml" />
       <module fileurl="file://$PROJECT_DIR$/javacommonlyusedclass.iml" filepath="$PROJECT_DIR$/javacommonlyusedclass.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop/oop.iml" filepath="$PROJECT_DIR$/oop/oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/threadsecurity/threadsecurity.iml" filepath="$PROJECT_DIR$/threadsecurity/threadsecurity.iml" />
     </modules>
   </component>
 </project>
