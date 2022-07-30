@@ -19,7 +19,7 @@ import java.io.Reader;
                             返回值是读取的字符数，读到文件末尾在读返回-1
         int read(char[] c,int off,int len);执行一次读取len个字节，从数组的off索引位置开始存 (了解)
  */
-public class Demo3 {
+public class {
     @Test
     public void test1() throws Exception {
 //        Reader in=new FileReader(new File("d:/iotest/java.txt"));
