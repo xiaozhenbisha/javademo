@@ -1,0 +1,54 @@
+package com.java.mywebproject;
+
+import java.io.IOException;
+import java.util.Enumeration;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.Response;
+
+public class MyFirstServlet implements Servlet {
+
+	public MyFirstServlet() {
+		System.out.println("MyFirstServlet");
+	}
+	@Override
+	public void destroy() {
+		System.out.println("destroy");
+		
+	}
+
+	@Override
+	public ServletConfig getServletConfig() {
+		System.out.println("getServletConfig");
+		return null;
+	}
+
+	@Override
+	public String getServletInfo() {
+		System.out.println("getServletInfo");
+		return null;
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		Enumeration<String> en =  config.getInitParameterNames();
+		while (en.hasMoreElements()) {
+			String name = (String) en.nextElement();
+			String value = config.getInitParameter(name);
+			System.out.println(name+":"+value);
+		}
+	}
+
+	@Override
+	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+		HttpServletResponse res = (HttpServletResponse)response;
+		res.getWriter().write("hahahahahah");
+		
+	}
+    
+}
