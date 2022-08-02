@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-1111
+    <form action="/MyWebProject/MySecondServlet" method="post">
+         <input name="aaa" type="text" value="111">
+        <input type="submit" value="提交http请求">
+    </form>
 </body>
 </html>
