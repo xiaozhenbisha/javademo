@@ -1,5 +1,0 @@
-package com.java.mywebproject;
-
-public class MyFirstSeverlet implements Severlet {
-
-}
