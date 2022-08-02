@@ -1,7 +1,2 @@
-INDEX VERSION 1.4+D:\github\javawebhome\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2493146098.index
-3414565118.index
-3815123673.index
-604540084.index
-360176240.index
-1597862002.index
+INDEX VERSION 1.4+/Users/wangzhennan/Desktop/github/javawebhome/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+611998570.index

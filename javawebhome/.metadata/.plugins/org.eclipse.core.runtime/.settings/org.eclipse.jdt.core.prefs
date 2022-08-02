@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 org.eclipse.jdt.core.classpathVariable.ASPECTJRT_LIB=D\:/\u8FC5\u96F7\u4E0B\u8F7D/spring-tool-suite-3.9.11.RELEASE-e4.14.0-win32-x86_64/sts-bundle/sts-3.9.11.RELEASE/plugins/org.aspectj.runtime_1.9.2.201911072000.jar
 org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=D\:/\u8FC5\u96F7\u4E0B\u8F7D/spring-tool-suite-3.9.11.RELEASE-e4.14.0-win32-x86_64/sts-bundle/sts-3.9.11.RELEASE/
-org.eclipse.jdt.core.classpathVariable.JRE_LIB=D\:/Develop/jre/lib/rt.jar
-org.eclipse.jdt.core.classpathVariable.JRE_SRC=
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=/Users/wangzhennan/Library/Java/JavaVirtualMachines/openjdk-16/Contents/Home/lib/jrt-fs.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=/Users/wangzhennan/Library/Java/JavaVirtualMachines/openjdk-16/Contents/Home/lib/src.zip
 org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
 org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=D\:/\u8FC5\u96F7\u4E0B\u8F7D/spring-tool-suite-3.9.11.RELEASE-e4.14.0-win32-x86_64/sts-bundle/sts-3.9.11.RELEASE/plugins/org.junit_4.12.0.v201504281640/
 org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/wzn/.m2/repository

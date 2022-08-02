@@ -1,5 +1,9 @@
 INDEX VERSION 1.131
+/Users/wangzhennan/Desktop/github/javawebhome/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/611998570.index
+/MyWebProject/src/main/java
 D:\github\javawebhome\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1946745018.index
 \MyWebProject\src
 D:\github\javawebhome\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2085423736.index
 \MyWebProject\src
+/Users/wangzhennan/Desktop/github/javawebhome/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3841125456.index
+/MyWebProject/src
