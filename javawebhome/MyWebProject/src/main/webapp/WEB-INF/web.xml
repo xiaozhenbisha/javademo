@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   
+  
   <context-param>
       <param-name>user</param-name>
-       <param-value>admin</param-value>
+       <param-value>wzn</param-value>
   </context-param>
   <context-param>
       <param-name>pwd</param-name>
-      <param-value>123456</param-value>
+      <param-value>789065</param-value>
   </context-param>
  
   <servlet>
-  <servlet-name>MyFirstServlet</servlet-name>
-  <servlet-class>com.java.web.MyFirstServlet</servlet-class>
+      <servlet-name>MyFirstServlet</servlet-name>
+      <servlet-class>com.java.web.MyFirstServlet</servlet-class>
+  </servlet>
  
- </servlet>
- <servlet-mapping>
-  <servlet-name>MyFirstServlet</servlet-name>
-  <url-pattern>/MyFirstServlet</url-pattern>
- </servlet-mapping>
+  <servlet-mapping>
+      <servlet-name>MyFirstServlet</servlet-name>
+      <url-pattern>/MyFirstServlet</url-pattern>
+  </servlet-mapping>
  
-    <servlet>
-  <servlet-name>MySecondServlet</servlet-name>
-  <servlet-class>com.java.web.MySecondServlet</servlet-class>
- </servlet>
- <servlet-mapping>
-  <servlet-name>MySecondServlet</servlet-name>
-  <url-pattern>/MySecondServlet</url-pattern>
- </servlet-mapping>
+  <servlet>
+      <servlet-name>MySecondServlet</servlet-name>
+      <servlet-class>com.java.web.MySecondServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>MySecondServlet</servlet-name>
+      <url-pattern>/MySecondServlet</url-pattern>
+  </servlet-mapping>
+ 
+ 
+  <servlet>
+      <servlet-name>LoginServlet</servlet-name>
+      <servlet-class>com.java.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>LoginServlet</servlet-name>
+      <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
  
 </web-app>

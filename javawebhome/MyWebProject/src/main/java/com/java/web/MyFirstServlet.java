@@ -36,17 +36,17 @@ public class MyFirstServlet implements Servlet{
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		//String value = config.getInitParameter("user");
-		//System.out.println(value);
-		/**
-		 * Enumeration<String> eu = config.getInitParameterNames();
+//		String value = config.getInitParameter("user");
+//		System.out.println(value);
+		this.servletContext = config.getServletContext();
+		Enumeration<String> eu = servletContext.getInitParameterNames();
 		while (eu.hasMoreElements()) {
 			String string = (String) eu.nextElement();
-			String value = config.getInitParameter(string);
+			String value = servletContext.getInitParameter(string);
 			System.out.println(value);
 		}
-		 */
-		this.servletContext = config.getServletContext();
+		 
+	
 		
 	}
 
@@ -56,11 +56,11 @@ public class MyFirstServlet implements Servlet{
 		//这句话实现了向servletContext对象的属性空间存入了一个键值对
 		//servletContext.setAttribute("qqqq","112222");
 		//res.getWriter().print(servletContext.getInitParameter("user"));
-		Properties pro = new Properties();
-		String aaaRealPath = servletContext.getRealPath("aaa.properties");
-		pro.load(new FileReader(aaaRealPath));
-		System.out.println(pro.getProperty("user"));
-		System.out.println(pro.getProperty("pwd"));
+		//Properties pro = new Properties();
+//		String aaaRealPath = servletContext.getRealPath("aaa.properties");
+//		pro.load(new FileReader(aaaRealPath));
+//		System.out.println(pro.getProperty("user"));
+//		System.out.println(pro.getProperty("pwd"));
 	}
 
 }
