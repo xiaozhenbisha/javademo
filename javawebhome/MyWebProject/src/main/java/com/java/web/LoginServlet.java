@@ -21,6 +21,11 @@ public class LoginServlet extends MyGenericServlet {
 //		System.out.println(httpServletReq.getContextPath());
 //		System.out.println(httpServletReq.getContentLength());
 		
+//		
+//		
+
+		// HttpServletRequest hreq= (HttpServletRequest)request;
+		 //HttpServletResponse hres= (HttpServletResponse)request;
 		String username = request.getParameter("username");
 		String pwd = request.getParameter("password");
 		if (username.equals(getServletConfig().getServletContext().getInitParameter("user")) && 
@@ -30,8 +35,6 @@ public class LoginServlet extends MyGenericServlet {
 		}else {
 			response.getWriter().println("username and password is wrong");
 		}
-
-		
 	}
 
 

@@ -11,6 +11,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
 public class MyFirstServlet implements Servlet{
 
@@ -38,14 +39,14 @@ public class MyFirstServlet implements Servlet{
 		// TODO Auto-generated method stub
 //		String value = config.getInitParameter("user");
 //		System.out.println(value);
-		this.servletContext = config.getServletContext();
-		Enumeration<String> eu = servletContext.getInitParameterNames();
-		while (eu.hasMoreElements()) {
-			String string = (String) eu.nextElement();
-			String value = servletContext.getInitParameter(string);
-			System.out.println(value);
-		}
-		 
+//		this.servletContext = config.getServletContext();
+//		Enumeration<String> eu = servletContext.getInitParameterNames();
+//		while (eu.hasMoreElements()) {
+//			String string = (String) eu.nextElement();
+//			String value = servletContext.getInitParameter(string);
+//			System.out.println(value);
+//		}
+		
 	
 		
 	}

@@ -2399,3 +2399,6 @@ Binding(COMMAND+SHIFT+T,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-08-04 19:16:03.283
+!MESSAGE The workspace will exit with unsaved changes in this session.
